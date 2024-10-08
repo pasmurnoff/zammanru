@@ -1,0 +1,61 @@
+.contactus {
+  background: #f7f7f7;
+  padding-bottom: 100px;
+
+  &__wrap {
+    display: grid;
+    background: #fff;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 36px 0 36px;
+    border-radius: 24px;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+
+    h2 {
+      font-size: 33px;
+      font-weight: 600;
+      line-height: 43.57px;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__left {
+    margin-top: 36px;
+  }
+
+  &__right {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.cform {
+  input[type="text"] {
+    background: rgba(240, 240, 240, 1);
+    padding: 16px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    border: 0;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    display: inline-block;
+    padding: 16px 28px;
+    background-color: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 0;
+    margin-top: 24px;
+  }
+}

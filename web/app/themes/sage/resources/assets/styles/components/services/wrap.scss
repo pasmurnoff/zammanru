@@ -1,0 +1,74 @@
+.services {
+  padding-top: 100px;
+  background-color: #f7f7f7;
+  text-align: center;
+
+  &-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.services__title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43.57px;
+  letter-spacing: -1%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services__carousel-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.services__carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* Включаем горизонтальную прокрутку */
+  scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  width: 380px;
+  height: 260px;
+  text-align: left;
+  display: flex;
+  flex-direction: column; /* Вертикальное размещение элементов */
+  justify-content: space-between; /* Пространство между иконкой и текстом */
+  flex-shrink: 0;
+
+  &__description {
+    font-size: 20px;
+    line-height: 24.2px;
+    letter-spacing: -1%;
+    font-weight: 600;
+    margin-top: auto; /* Автоматический отступ сверху, чтобы текст ушел вниз */
+  }
+}
+
+.carousel-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-button {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 51px;
+  height: 51px;
+  margin: 0 10px;
+}
+

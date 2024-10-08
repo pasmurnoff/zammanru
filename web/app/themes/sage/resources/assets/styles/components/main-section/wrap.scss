@@ -1,0 +1,42 @@
+.main-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* затемнение фона */
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 72.61px;
+    letter-spacing: -1%;
+  }
+}

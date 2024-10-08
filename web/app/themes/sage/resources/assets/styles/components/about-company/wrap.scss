@@ -1,0 +1,45 @@
+.about-company {
+  padding-top: 100px;
+  background-color: #f7f7f7;
+  text-align: center;
+  position: relative;
+
+  &__title {
+    font-size: 36px;
+    line-height: 43.57px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #000;
+  }
+
+  &__description {
+    font-size: 26px;
+    line-height: 31.47px;
+    letter-spacing: -1%;
+    color: #000;
+    margin: 0 auto 24px;
+    font-weight: 600;
+  }
+
+  &__button {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  &__map {
+    margin-top: 40px;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

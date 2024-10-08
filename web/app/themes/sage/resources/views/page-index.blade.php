@@ -2,7 +2,4 @@
 Template Name: Главная страница
 --}}
 @extends('layouts.app')
-
-@section('content')
-{{--  Put front page content there--}}
-@endsection
+<h1>hello world</h1>
