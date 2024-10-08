@@ -324,30 +324,45 @@
 
 
 <footer class="footer">
-  <div class="footer__container">
-    <div class="footer__logo">
-      <h2>ZAMMAN</h2>
-      <div class="footer__socials">
-        <a href="#"><img src="path-to-vk-icon.svg" alt="VK" /></a>
-        <a href="#"><img src="path-to-telegram-icon.svg" alt="Telegram" /></a>
+  <div class="container">
+    <div class="footer__wrap">
+      <div class="footer__left">
+        <div class="footer__logo">
+          <img src="@asset('images/logo_white.svg')">
+        </div>
+        <div class="footer__socials">
+          <div class="fsocials">
+            <img src="@asset('images/socials/telegram-footer.svg')">
+            <img src="@asset('images/socials/vk-footer.svg')">
+          </div>
+        </div>
+        <div class="footer__slogan">
+          <p>ЗАМАН – Ваш надежный партнер в созидании успешного будущего!</p>
+        </div>
+        <div class="footer__tags">
+          <a>#ЗАМАН</a> <a>#ВРЕМЯСОЗИДАТЬБУДУЩЕЕ</a>
+        </div>
+      </div>
+
+      <div class="footer__contacts">
+        <div class="footer-contacts">
+          <div class="footer-contacts__element">
+            <img src=""><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+          </div>
+          <div class="footer-contacts__element">
+            <img src=""><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+          </div>
+          <div class="footer-contacts__element">
+            <img src=""><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+          </div>
+        </div>
+
+        <div class="footer__buttons">
+          <a href="footer-button__primary">Связаться</a>
+          <a href="footer-button__secondary">Карта партнера</a>
+        </div>
       </div>
     </div>
-
-    <div class="footer__contacts">
-      <p><img src="path-to-location-icon.svg" alt="Address" /> 423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</p>
-      <p><img src="path-to-phone-icon.svg" alt="Phone" /> +7 (8553) 42-40-79, +7 (939) 310-40-79</p>
-      <p><img src="path-to-email-icon.svg" alt="Email" /> <a href="mailto:mail@zamman.com">mail@zamman.com</a>, <a href="mailto:omts@zamman.com">omts@zamman.com</a></p>
-    </div>
-
-    <div class="footer__actions">
-      <a href="#" class="footer__button footer__button--primary">Связаться</a>
-      <a href="#" class="footer__button footer__button--secondary">Карта партнера</a>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <p>© 2012-2024, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</p>
-    <a href="#">Политика конфиденциальности</a>
   </div>
 </footer>
 

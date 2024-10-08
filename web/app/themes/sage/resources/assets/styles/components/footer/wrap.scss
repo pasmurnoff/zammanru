@@ -1,124 +1,37 @@
 .footer {
-  background-color: #000;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
+  background: #000;
+  padding-top: 40px;
 
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
+  &__wrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-  &__contacts {
-    font-size: 16px;
-    line-height: 1.5;
-
-    p {
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-
-      img {
-        margin-right: 10px;
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    a {
-      color: #f39c12;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 
   &__logo {
-    h2 {
-      font-size: 36px;
-      font-weight: 700;
+    margin-bottom: 46px;
+  }
+
+  &__socials {
+    margin-bottom: 46px;
+  }
+
+  &__slogan {
+    margin-bottom: 12px;
+
+    p {
       color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .footer__socials {
-      display: flex;
-      gap: 15px;
-
-      a {
-        display: inline-block;
-
-        img {
-          width: 40px;
-          height: 40px;
-        }
-      }
-    }
-  }
-
-  &__actions {
-    display: flex;
-    gap: 20px;
-
-    .footer__button {
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 50px;
       font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      text-align: center;
-      transition: background-color 0.3s ease;
-
-      &--primary {
-        background-color: #f39c12;
-        color: #fff;
-
-        &:hover {
-          background-color: #e67e22;
-        }
-      }
-
-      &--secondary {
-        background-color: transparent;
-        border: 2px solid #fff;
-        color: #fff;
-
-        &:hover {
-          background-color: #fff;
-          color: #000;
-        }
-      }
+      line-height: 19.36px;
+      font-weight: 400;
     }
   }
 
-  &__bottom {
-    margin-top: 40px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Блоки с контактами и соцсетями */
-  .footer__logo .footer__socials a img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .footer__contacts a:hover {
-    color: #f39c12;
-    text-decoration: underline;
+  &__tags {
+    a {
+      color: var(--primary);
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 400;
+    }
   }
 }
