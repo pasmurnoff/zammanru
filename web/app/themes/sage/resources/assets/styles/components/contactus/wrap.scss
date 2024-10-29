@@ -2,32 +2,74 @@
   background: #f7f7f7;
   padding-bottom: 100px;
 
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 60px;
+  }
+
   &__wrap {
     display: grid;
     background: #fff;
-    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    padding: 0 36px 0 36px;
+    padding: 0 0 0 36px;
     border-radius: 24px;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 0 0 24px;
+    }
+
+    @media screen and (max-width: 520px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0;
+    }
   }
 
   &__title {
     margin-bottom: 36px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 24px;
+    }
 
     h2 {
       font-size: 33px;
       font-weight: 600;
       line-height: 43.57px;
       letter-spacing: -1%;
+
+      @media screen and (max-width: 768px) {
+        font-size: 32px;
+        line-height: 38.73px;
+      }
+
+      @media screen and (max-width: 520px) {
+        font-size: 24px;
+        line-height: 29.05px;
+      }
     }
   }
 
   &__left {
     margin-top: 36px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 24px;
+    }
+
+    @media screen and (max-width: 520px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 
   &__right {
+    display: flex;
+
     img {
       width: 100%;
     }
@@ -35,6 +77,12 @@
 }
 
 .cform {
+  padding-bottom: 36px;
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 24px;
+  }
+
   input[type="text"] {
     background: rgba(240, 240, 240, 1);
     padding: 16px 20px;
@@ -45,6 +93,14 @@
     border: 0;
     width: 100%;
     margin-bottom: 12px;
+
+    @media screen and (max-width: 768px) {
+      padding: 12px 28px;
+    }
+
+    @media screen and (max-width: 520px) {
+      padding: 12px 20px;
+    }
   }
 
   input[type="submit"] {
@@ -57,5 +113,15 @@
     border-radius: 30px;
     border: 0;
     margin-top: 24px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 142, 0, 0.93);
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 12px 28px;
+      margin-top: 12px;
+    }
   }
 }

@@ -2,6 +2,14 @@
   padding-top: 100px;
   background-color: #f7f7f7;
 
+  @media screen and (max-width: 1024px) {
+    padding-top: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
+
   &__title {
     font-size: 36px;
     font-weight: 600;
@@ -9,12 +17,55 @@
     letter-spacing: -1%;
     text-align: center;
     margin-bottom: 60px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 38.73px;
+      margin-bottom: 36px;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
+
+    &_onpage {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media screen and (max-width: 768px) {
+        gap: 16px;
+      }
+
+      @media screen and (max-width: 520px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
+  &__slider {
+    display: none;
+
+    @media screen and (max-width: 520px) {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      height: 518px;
+    }
   }
 }
 
@@ -37,10 +88,19 @@
     color: #000;
     margin-bottom: 24px;
     transition: color 0.3s;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+      line-height: 19.36px;
+    }
   }
 
   &:hover {
     transform: translateY(-5px); /* Легкий эффект подъема при ховере */
+
+    @media screen and (max-width: 768px) {
+      transform: none;
+    }
   }
 
   &:hover .product-card__title {
@@ -54,6 +114,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1024px) {
+      height: auto;
+    }
   }
 
   &__image {
@@ -97,5 +161,40 @@
   /* Предпоследняя карточка растягивается на две колонки */
   &--wide {
     grid-column: span 2;
+
+    @media screen and (max-width: 1024px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+.products-page {
+  padding-top: 0;
+
+  &__title {
+    font-size: 36px;
+    line-height: 43.57px;
+    font-weight: 600;
+    margin-bottom: 36px;
+    color: rgba(0, 0, 0, 1);
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 38.73px;
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: 520px) {
+      font-size: 28px;
+      line-height: 33.89px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.products-slider {
+  .swiper-pagination-bullet-active {
+    background: #f39c12 !important; /* Цвет активной точки */
+    opacity: 1; /* Полная непрозрачность активной точки */
   }
 }

@@ -1,0 +1,237 @@
+.regular-page {
+  &__title {
+    font-size: 36px;
+    line-height: 43.57px;
+    font-weight: 600;
+    margin-bottom: 36px;
+    color: rgba(0, 0, 0, 1);
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 38.73px;
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: 520px) {
+      font-size: 28px;
+      line-height: 33.89px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__wrap {
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding-bottom: 60px;
+      gap: 0;
+    }
+
+    @media screen and (max-width: 520px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding-bottom: 48px;
+    }
+  }
+
+  &__gallery {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    line-height: 16.94px;
+    margin-top: 36px;
+    padding-top: 8px;
+    border-top: 1px solid #0000000f;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__all {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    span {
+      color: var(--primary);
+      font-size: 14px;
+      line-height: 16.94px;
+
+      &:hover {
+        color: rgba(255, 142, 0, 0.93);
+      }
+    }
+  }
+
+  &__content {
+    h2 {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24.2px;
+      color: rgba(0, 0, 0, 1);
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.36px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      color: rgba(0, 0, 0, 1);
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    li {
+      margin-top: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.36px;
+    }
+  }
+}
+
+// .gallery-container {
+//   width: 100%; // Контейнер галереи занимает всю ширину
+
+//   .gallery-main-image {
+//     width: 100%; // Основное изображение занимает всю ширину
+//     margin-bottom: 20px; // Отступ снизу для разделения с миниатюрами
+
+//     a {
+//       display: block;
+
+//       img {
+//         width: 100%;
+//         height: auto; // Сохраняем пропорции изображения
+//         border-radius: 16px;
+//       }
+//     }
+//   }
+
+//   .gallery-thumbnails {
+//     display: flex;
+//     justify-content: space-between; // Равномерное распределение миниатюр
+//     gap: 10px; // Расстояние между миниатюрами
+//     width: 100%; // Миниатюры занимают всю ширину
+
+//     a {
+//       flex-grow: 1; // Миниатюры растягиваются на доступное пространство
+//       flex-basis: calc(100% / 4 - 10px);
+//       max-width: 250px; // Ограничиваем максимальную ширину миниатюры
+//       display: block;
+
+//       img {
+//         width: 100%;
+//         height: auto; // Изображение сохраняет свои пропорции
+//         object-fit: cover; // Изображение масштабируется, сохраняя пропорции, и заполняет контейнер
+//         border-radius: 16px;
+//         transition: transform 0.3s ease; // Плавное увеличение при наведении
+//       }
+
+//       &:hover img {
+//         transform: scale(1.05); // Увеличение изображения при наведении
+//       }
+//     }
+//   }
+// }
+
+// // Адаптивные стили для уменьшения количества миниатюр
+// @media (max-width: 768px) {
+//   .gallery-thumbnails {
+//     gap: 8px; // Меньший зазор между миниатюрами
+
+//     a {
+//       flex-basis: calc(100% / 2 - 8px);
+//       max-width: 150px; // Ограничение максимального размера миниатюр для мобильных устройств
+
+//       img {
+//         border-radius: 3px; // Меньший радиус на мобильных устройствах
+//       }
+//     }
+//   }
+// }
+.custom-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  .custom-gallery-main-image {
+    position: relative;
+    width: 100%; /* Ширина будет всегда 100% от контейнера */
+    padding-bottom: 75%; /* Это трюк для сохранения пропорции 4:3 (100%/4*3 = 75%) */
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .custom-large-image {
+      position: absolute;
+      border-radius: 16px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Это свойство сохранит пропорции изображения, заполняя контейнер */
+    }
+  }
+
+  .custom-small-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 изображения в ряд */
+    gap: 8px; /* Промежутки между изображениями */
+
+    a {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* Соотношение 4:3 (3/4 = 0.75 или 75%) */
+      display: block;
+    }
+
+    .custom-small-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      object-fit: cover; /* Обрезка изображений под нужный размер */
+    }
+  }
+}
+
+#page-title-full {
+  display: block;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+#page-title-mobile {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+#page-content-mobile {
+  @media screen and (max-width: 768px) {
+    padding-top: 24px;
+  }
+}

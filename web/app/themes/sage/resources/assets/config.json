@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/app/themes/sage",
-  "devUrl": "http://zamman.test",
+  "devUrl": "http://zamzam.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

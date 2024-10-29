@@ -3,6 +3,14 @@
   background-color: #f7f7f7;
   text-align: center;
 
+  @media screen and (max-width: 1024px) {
+    padding-top: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
+
   &-container {
     width: 100%;
     max-width: 1200px;
@@ -18,12 +26,22 @@
   letter-spacing: -1%;
   text-align: center;
   margin-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+    line-height: 38.73px;
+    margin-bottom: 36px;
+  }
 }
 
 .services__carousel-wrapper {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+
+  @media screen and (max-width: 520px) {
+    display: none;
+  }
 }
 
 .services__carousel {
@@ -31,6 +49,12 @@
   gap: 20px;
   overflow-x: hidden; /* Включаем горизонтальную прокрутку */
   scroll-behavior: smooth; /* Плавная прокрутка */
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 .service-card {
@@ -45,12 +69,23 @@
   justify-content: space-between; /* Пространство между иконкой и текстом */
   flex-shrink: 0;
 
+  @media screen and (max-width: 768px) {
+    width: auto;
+    height: auto;
+  }
+
   &__description {
     font-size: 20px;
     line-height: 24.2px;
     letter-spacing: -1%;
     font-weight: 600;
     margin-top: auto; /* Автоматический отступ сверху, чтобы текст ушел вниз */
+
+    @media screen and (max-width: 768px) {
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 19.36px;
+    }
   }
 }
 
@@ -58,6 +93,10 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .carousel-button {
@@ -71,4 +110,3 @@
   height: 51px;
   margin: 0 10px;
 }
-

@@ -38,5 +38,22 @@
     font-weight: 600;
     line-height: 72.61px;
     letter-spacing: -1%;
+    color: rgba(255, 255, 255, 1);
+
+    @media screen and (max-width: 768px) {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 58.09px;
+      letter-spacing: -1%;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    @media screen and (max-width: 520px) {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 43.57px;
+      letter-spacing: -1%;
+      color: rgba(255, 255, 255, 1);
+    }
   }
 }

@@ -1,0 +1,98 @@
+.additionally-files {
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29.05px;
+    letter-spacing: -1%;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &__docs {
+    padding-top: 24px;
+  }
+}
+
+.useful-files {
+  padding-top: 16px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.06); // Добавляем верхнюю границу только для первого элемента
+    }
+  }
+
+  &__title {
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.36px;
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+
+  &__descr {
+    span {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 400;
+      line-height: 16.94px;
+    }
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    .a {
+      color: rgba(255, 142, 0, 1);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.36px;
+    }
+  }
+}
+
+.additionally-files__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Сетка из 4 колонок */
+  gap: 12px; /* Расстояние между элементами */
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.additionally-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#additional-file-full {
+  display: block;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+#additional-file-mobile {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}

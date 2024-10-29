@@ -1,18 +1,19 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
 @include('components.head.wrap')
+
 <body @php body_class() @endphp>
-@php do_action('get_header') @endphp
-@include('components.header.wrap')
+    @php do_action('get_header') @endphp
 
 
-<div class="wrapper">
-  @yield('content')
-</div>
+    <div class="wrapper">
+        @yield('content')
+    </div>
 
 
-@php do_action('get_footer') @endphp
-@include('components.footer.wrap')
-@php wp_footer() @endphp
+    @php do_action('get_footer') @endphp
+    @include('components.footer.wrap')
+    @php wp_footer() @endphp
 </body>
+
 </html>

@@ -38,7 +38,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
  * Ensure dependencies are loaded
  */
 if (!class_exists('Roots\\Sage\\Container')) {
-    if (!file_exists($composer = __DIR__.'/../vendor/autoload.php')) {
+    if (!file_exists($composer = __DIR__ . '/../vendor/autoload.php')) {
         $sage_error(
             __('You must run <code>composer install</code> from the Sage directory.', 'sage'),
             __('Autoloader not found.', 'sage')
@@ -85,9 +85,9 @@ array_map(
 Container::getInstance()
     ->bindIf('config', function () {
         return new Config([
-            'assets' => require dirname(__DIR__).'/config/assets.php',
-            'theme' => require dirname(__DIR__).'/config/theme.php',
-            'view' => require dirname(__DIR__).'/config/view.php',
+            'assets' => require dirname(__DIR__) . '/config/assets.php',
+            'theme' => require dirname(__DIR__) . '/config/theme.php',
+            'view' => require dirname(__DIR__) . '/config/view.php',
         ]);
     }, true);
 
@@ -96,3 +96,22 @@ Container::getInstance()
  * On this file we only append another function files
  */
 require_once dirname(__DIR__ . '/resources') . '/functions/remove.php';
+
+
+function use_custom_template_for_category_posts($template)
+{
+    if (is_single()) {
+        if (has_category('gallery')) {
+            $new_template = locate_template('views/single-gallery-post.blade.php');
+        } elseif (has_category('news')) {
+            $new_template = locate_template('views/single-news-post.blade.php');
+        }
+
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+
+add_filter('template_include', 'use_custom_template_for_category_posts', 99);

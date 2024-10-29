@@ -1,0 +1,86 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+    .slide {
+      min-width: 100%; // Для слайдера на главной странице
+      box-sizing: border-box;
+      padding: 0;
+      flex: 1 0 100%;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    // Для страницы услуг (слайдер на 3 слайда)
+    &.slider-three {
+      .slide {
+        min-width: calc(100% / 3); // Показывать 3 слайда
+        flex: 1 0 calc(100% / 3);
+      }
+    }
+  }
+}
+
+// Пагинация
+.pagination {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  @media screen and (max-width: 520px) {
+    display: flex;
+  }
+
+  .pagination-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #0000000f;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .pagination-dot.active {
+    background-color: var(--primary);
+  }
+}
+
+#slider1,
+#slider2,
+#slider3 {
+  display: none;
+
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
+}
+
+#slider4 {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile-gallery {
+  width: 100%; // Изображение занимает всю ширину слайда
+  height: 100%; // Автоматически поддерживаем пропорции изображения
+  object-fit: cover; // Заполнение области изображения, обрезая края
+  border-radius: 16px; // Закругленные углы
+}
+
+#pag_mobile {
+  @media screen and (max-width: 768px) {
+    display: flex !important;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,33 @@
+#breadcrumbs {
+  padding-top: 104px;
+  font-size: 14px;
+  line-height: 16.94px;
+  font-weight: 500;
+  letter-spacing: -1%;
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 36px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 92px;
+    padding-bottom: 24px;
+  }
+
+  @media screen and (max-width: 520px) {
+    padding-top: 84px;
+    padding-bottom: 16px;
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.6); /* Цвет ссылок */
+    text-decoration: none;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  .separator {
+    margin: 0 8px;
+    color: rgba(0, 0, 0, 0.6); /* Цвет разделителя */
+  }
+}

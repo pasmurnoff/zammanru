@@ -1,5 +1,6 @@
 @import "common/variables";
 @import "common/global";
+@import "common/buttons";
 
 /* Components */
 @import "components/header/init";
@@ -11,3 +12,13 @@
 @import "components/events/init";
 @import "components/contactus/init";
 @import "components/footer/init";
+@import "components/breadcrumbs/init";
+@import "components/page/init.scss";
+@import "components/regular-page/init.scss";
+@import "components/partners-page/init.scss";
+@import "components/contacts/init.scss";
+@import "components/events-page/init.scss";
+@import "components/gallery-page/init.scss";
+@import "components/addfiles/init.scss";
+@import "components/main-page/init";
+@import "components/slider/init";

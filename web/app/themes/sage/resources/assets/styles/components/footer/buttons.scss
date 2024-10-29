@@ -1,0 +1,36 @@
+.footer-button {
+  &__primary {
+    display: flex;
+
+    a {
+      display: inline-block;
+      padding: 16px 28px;
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.footer-button__secondary {
+  display: flex;
+
+  a {
+    display: inline-block;
+    padding: 16px 28px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+  }
+}

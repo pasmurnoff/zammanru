@@ -4,6 +4,7 @@ import 'jquery';
 // Import components
 import './components/header/init';
 import './components/main-text/init';
+import './components/slider/init';
 
 // import local dependencies
 import Router from './util/Router';

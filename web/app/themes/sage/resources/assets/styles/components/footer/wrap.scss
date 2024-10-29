@@ -1,10 +1,22 @@
 .footer {
   background: #000;
   padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media (max-width: 520px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 24px;
+  }
 
   &__wrap {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 520px) {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 
   &__logo {
@@ -23,6 +35,11 @@
       font-size: 16px;
       line-height: 19.36px;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 14px; /* 1 карточка в ряд на мобильных */
+        line-height: 16.94px;
+      }
     }
   }
 
@@ -32,6 +49,116 @@
       font-size: 16px;
       line-height: 19.36px;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 14px; /* 1 карточка в ряд на мобильных */
+        line-height: 16.94px;
+      }
+    }
+
+    br {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 48px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: #ffffff1a;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @media (max-width: 520px) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+
+      @media (max-width: 520px) {
+        gap: 24px;
+      }
+    }
+  }
+
+  &__copyrights {
+    @media (max-width: 768px) {
+      order: 2;
+    }
+
+    span {
+      color: #fff;
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 400;
+    }
+  }
+
+  &__links {
+    @media (max-width: 768px) {
+      order: 1;
+    }
+
+    a {
+      color: #fff;
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 400;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.footer-contacts {
+  display: inline-flex;
+  gap: 20px;
+  flex-direction: column;
+
+  &__element {
+    display: flex;
+    gap: 8px;
+
+    span {
+      color: #fff;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19.36px;
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px; /* 1 карточка в ряд на мобильных */
+        line-height: 16.94px;
+      }
+    }
+  }
+}
+
+.fsocials {
+  display: flex;
+  gap: 8px;
 }

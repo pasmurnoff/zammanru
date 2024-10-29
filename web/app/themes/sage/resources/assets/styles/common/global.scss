@@ -4,6 +4,10 @@
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background-color: #f7f7f7;
+}
+
 a {
   text-decoration: none;
 }
@@ -18,5 +22,6 @@ a {
   @media screen and (max-width: 1230px) {
     padding-left: 15px;
     padding-right: 15px;
+    width: auto;
   }
 }
