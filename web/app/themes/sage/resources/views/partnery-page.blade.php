@@ -91,11 +91,11 @@ Template Name: Партнеры 2
                 </div>
 
                 <div class="partners-page-list">
-                    <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners-page__item">
-                    <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners-page__item">
-                    <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners-page__item">
-                    <img src="@asset('images/partners/4.svg')" alt="Алоил" class="partners-page__item">
-                    <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners-page__item">
+                    <img src="@asset('images/partners/1.png')" alt="Ритек" class="partners-page__item">
+                    <img src="@asset('images/partners/2.png')" alt="Татнефть" class="partners-page__item">
+                    <img src="@asset('images/partners/3.png')" alt="Татнефтеотдача" class="partners-page__item">
+                    <img src="@asset('images/partners/4.png')" alt="Алоил" class="partners-page__item">
+                    <img src="@asset('images/partners/5.png')" alt="Самараинвестнефть" class="partners-page__item">
                     <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners-page__item">
                     <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item">
                     <img src="@asset('images/partners/8.svg')" alt="ТроицкНефть" class="partners-page__item">

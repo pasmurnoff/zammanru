@@ -37,19 +37,21 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-bottom: 36px;
+      margin-bottom: 100px;
 
       @media (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 60px;
       }
 
       @media (max-width: 768px) {
-        margin-bottom: 24px;
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 40px;
       }
 
       @media (max-width: 520px) {
         grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 36px;
       }
     }
   }

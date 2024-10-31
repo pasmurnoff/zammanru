@@ -60,14 +60,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-bottom: 36px;
+    margin-bottom: 100px;
 
     @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на планшетах */
+      margin-bottom: 80px;
     }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr; /* 1 карточка в ряд на мобильных */
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr; /* 1 карточка в ряд на мобильных */
+      margin-bottom: 36px;
     }
   }
 

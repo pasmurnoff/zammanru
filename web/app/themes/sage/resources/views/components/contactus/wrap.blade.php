@@ -10,7 +10,7 @@
                     <form class="cform">
                         <input type="text" placeholder="Имя">
                         <input type="text" placeholder="Номер или почта">
-                        <input type="submit">
+                        <input type="submit" value="Отправить заявку">
                     </form>
                 </div>
             </div>

@@ -29,18 +29,52 @@
             </div>
             <nav class="header__nav">
                 <ul class="header-menu">
-                    <li class="header-menu-item"><a href="/produkciya">Продукция</a></li>
+                    <li class="header-menu-item dropdown">
+                        <a href="/produkciya">Продукция</a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-wrap">
+                                <a class="dd-element" href="">Мобильные скважинные
+                                    компрессорные установки
+                                    (МСКУ)</a>
+                                <a class="dd-element" href="/product/мобильные-скважинные-компрессорные/">Компрессорные
+                                    станции
+                                    (КС)</a>
+                                <a class="dd-element" href="/produkciya/nasosnye-stantsii">Насосные станции (НС)</a>
+                                <a class="dd-element" href="/produkciya/blok-modulnye-zdaniya">Блочные модульные здания
+                                    и
+                                    металлоконструкции</a>
+                                <a class="dd-element" href="/produkciya/asu">Автоматизированные системы управления
+                                    (АСУ)</a>
+                                <a class="dd-element" href="/produkciya/udxr">Установки дозирования химических реагентов
+                                    (УДХР)</a>
+                                <a class="dd-element" href="/produkciya/zapchasti">Поставка запчастей к
+                                    нефтепромысловому оборудованию</a>
+                                <a class="dd-element" href="/produkciya/nestandartnaya-produkcya">Нестандартная
+                                    продукция</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="header-menu-item"><a href="/uslugi">Услуги</a></li>
                     <li class="header-menu-item"><a href="/o-kompanii">О компании</a></li>
                     <li class="header-menu-item"><a href="/partnery-page">Партнеры</a></li>
                     <li class="header-menu-item"><a href="/sobytiya">События</a></li>
-                    <li class="header-menu-item"><a href="/galereya">Галерея</a></li>
+                    <li class="header-menu-item dropdown">
+                        <a href="/galereya">Галерея</a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-wrap">
+                                @foreach (App::galleryAlbums() as $album)
+                                    <a class="dd-element"
+                                        href="{{ get_permalink($album->ID) }}">{{ $album->post_title }}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </li>
                     <li class="header-menu-item"><a href="/kontakty">Контакты</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
                 <div class="header__action">
-                    <a href="#" class="btn_primary">Связаться</a>
+                    <a href="#" class="btn_primary openModal">Связаться</a>
                 </div>
                 <div class="hamburger">
                     <a href="#"><svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -76,8 +110,24 @@
             </ul>
         </div>
         <div class="mobmenu__button">
-            <a href="" class="btn_primary">Связаться</a>
+            <a href="" class="btn_primary openModal">Связаться</a>
         </div>
 
+    </div>
+</div>
+
+
+<div class="modal" id="contactModal">
+    <div class="modal-content">
+        <div class="contactus__title">
+            <h2>Связаться</h2>
+        </div>
+        <div class="contactus__form">
+            <form class="cform">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Номер или почта">
+                <input type="submit" value="Отправить заявку">
+            </form>
+        </div>
     </div>
 </div>

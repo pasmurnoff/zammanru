@@ -2,7 +2,19 @@
   text-align: center;
   position: relative;
 
+  &__title {
+    position: relative;
+    z-index: 99;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 99;
+  }
+
   &__description {
+    position: relative;
+    z-index: 99;
     font-size: 26px;
     line-height: 31.47px;
     letter-spacing: -1%;
@@ -28,8 +40,20 @@
     position: relative;
 
     img {
+      margin-top: -400px;
+      margin-bottom: -250px;
       max-width: 100%;
       height: auto;
+
+      @media screen and (max-width: 768px) {
+        margin-top: -200px;
+        margin-bottom: -150px;
+      }
+
+      @media screen and (max-width: 520px) {
+        margin-top: -150px;
+        margin-bottom: -100px;
+      }
     }
   }
 }

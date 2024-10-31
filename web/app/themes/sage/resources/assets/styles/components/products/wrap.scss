@@ -104,7 +104,7 @@
   }
 
   &:hover .product-card__title {
-    color: #f39c12; /* Изменение цвета текста при ховере */
+    color: var(--primary); /* Изменение цвета текста при ховере */
   }
 
   &__image-container {
@@ -127,6 +127,20 @@
     border-radius: 10px;
     filter: grayscale(100%); /* Черно-белый фильтр по умолчанию */
     transition: filter 0.3s ease; /* Плавное изменение фильтра */
+
+    &_wide {
+      max-width: 130%;
+      max-height: 130%;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: grayscale(100%); /* Черно-белый фильтр по умолчанию */
+      transition: filter 0.3s ease; /* Плавное изменение фильтра */
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
   }
 
   &:hover .product-card__image {
@@ -135,7 +149,7 @@
 
   &__circle-button {
     position: absolute;
-    background-color: #f39c12;
+    background-color: var(--primary);
     border-radius: 50%;
     bottom: 24px;
     right: 24px;
@@ -194,7 +208,7 @@
 
 .products-slider {
   .swiper-pagination-bullet-active {
-    background: #f39c12 !important; /* Цвет активной точки */
+    background: #ff8e00 !important; /* Цвет активной точки */
     opacity: 1; /* Полная непрозрачность активной точки */
   }
 }

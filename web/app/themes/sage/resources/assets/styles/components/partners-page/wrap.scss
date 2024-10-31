@@ -28,8 +28,10 @@
     height: auto;
     filter: grayscale(100%); /* Черно-белый эффект */
     transition: filter 0.3s ease; /* Плавный переход */
+    opacity: 0.5;
 
     &:hover {
+      opacity: 1;
       filter: none; /* Цветное изображение при наведении */
     }
   }

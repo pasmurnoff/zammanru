@@ -25,4 +25,14 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    // Добавляем новый метод для получения записей из категории "Галерея"
+    public static function galleryAlbums()
+    {
+        return get_posts([
+            'post_type' => 'post',           // Укажите тип записи, если это посты или другой кастомный тип
+            'category_name' => 'gallery',   // Слаг категории "Галерея" (замените на ваш слаг)
+            'numberposts' => -1              // Получить все записи
+        ]);
+    }
 }

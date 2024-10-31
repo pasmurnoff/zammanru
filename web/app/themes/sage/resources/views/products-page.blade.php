@@ -85,7 +85,7 @@ Template Name: Продукция
                 <h3 class="product-card__title">Поставка запчастей к нефтепромысловому оборудованию</h3>
                 <div class="product-card__image-container">
                     <img src="@asset('images/products/product7.png')" alt="Поставка запчастей к нефтепромысловому оборудованию"
-                        class="product-card__image">
+                        class="product-card__image_wide">
                 </div>
                 <a href="#" class="product-card__circle-button">
                     <span class="product-card__circle-icon">→</span>

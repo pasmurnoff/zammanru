@@ -37,7 +37,7 @@
 
                 <div class="footer__buttons">
                     <div class="footer-button__primary">
-                        <a href="">Связаться</a>
+                        <a href="#" class="openModal">Связаться</a>
                     </div>
                     <div class="footer-button__secondary">
                         <a href="" class="footer-button__secondary">Карта партнера</a>
@@ -126,5 +126,26 @@
         const x = e.touches[0].pageX - carousel.offsetLeft;
         const walk = (x - startX) * 2;
         carousel.scrollLeft = scrollLeft - walk;
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('contactModal');
+        const openButtons = document.querySelectorAll('.openModal'); // Все кнопки с классом openModal
+
+        // Добавляем обработчик для каждой кнопки
+        openButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = 'flex'; // Показать модальное окно
+            });
+        });
+
+        // Закрытие модального окна при клике на затемнённую область
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none'; // Скрыть модальное окно
+            }
+        });
     });
 </script>

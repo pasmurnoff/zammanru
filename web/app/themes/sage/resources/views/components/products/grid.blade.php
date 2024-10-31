@@ -1,11 +1,14 @@
 <div class="products__grid">
     <div class="product-card">
-        <h3 class="product-card__title">Мобильные скважинные компрессорные установки (МСКУ)</h3>
-        <div class="product-card__image-container">
-            <img src="@asset('images/products/product1.png')" alt="Мобильные скважинные компрессорные установки" class="product-card__image">
-        </div>
-        <a href="#" class="product-card__circle-button">
-            <span class="product-card__circle-icon">→</span>
+        <a href="product/мобильные-скважинные-компрессорные/">
+            <h3 class="product-card__title">Мобильные скважинные компрессорные установки (МСКУ)</h3>
+            <div class="product-card__image-container">
+                <img src="@asset('images/products/product1.png')" alt="Мобильные скважинные компрессорные установки"
+                    class="product-card__image">
+            </div>
+            <a href="#" class="product-card__circle-button">
+                <span class="product-card__circle-icon">→</span>
+            </a>
         </a>
     </div>
 
@@ -64,7 +67,7 @@
         <h3 class="product-card__title">Поставка запчастей к нефтепромысловому оборудованию</h3>
         <div class="product-card__image-container">
             <img src="@asset('images/products/product7.png')" alt="Поставка запчастей к нефтепромысловому оборудованию"
-                class="product-card__image">
+                class="product-card__image_wide">
         </div>
         <a href="#" class="product-card__circle-button">
             <span class="product-card__circle-icon">→</span>

@@ -47,18 +47,17 @@ Template Name: Контакты
                 <a href="" class="btn_primary btn_wdth">Карта партнера (1.2 МБ)</a>
 
             </div>
-            <div class="contact-page__map">
+            <div class="contacts-page__map">
+                <img src="@asset('images/contacts/map.png')">
             </div>
         </div>
 
         <div class="contacts-page__cards">
             <div class="contact-card">
                 <div class="contact-card__top">
-                    <div class="contact-card__image"
-                        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/contacts/kosurov.jpg')">
+                    <div class="contact-card__image">
+                        <img src="@asset('images/contacts/kosurov.png')">
                     </div>
-
-
                     <div class="contact-card__info">
                         <div class="contact-card__name">
                             <span>Косуров Михаил
@@ -91,6 +90,8 @@ Template Name: Контакты
             <div class="contact-card">
                 <div class="contact-card__top">
                     <div class="contact-card__image">
+                        <img src="@asset('images/contacts/husainov.png')">
+
                     </div>
                     <div class="contact-card__info">
                         <div class="contact-card__name">
@@ -124,6 +125,8 @@ Template Name: Контакты
             <div class="contact-card">
                 <div class="contact-card__top">
                     <div class="contact-card__image">
+                        <img src="@asset('images/contacts/semenyuk.png')">
+
                     </div>
                     <div class="contact-card__info">
                         <div class="contact-card__name">
@@ -156,6 +159,8 @@ Template Name: Контакты
             <div class="contact-card">
                 <div class="contact-card__top">
                     <div class="contact-card__image">
+                        <img src="@asset('images/contacts/chupahina.png')">
+
                     </div>
                     <div class="contact-card__info">
                         <div class="contact-card__name">
@@ -189,6 +194,7 @@ Template Name: Контакты
             <div class="contact-card">
                 <div class="contact-card__top">
                     <div class="contact-card__image">
+                        <img src="@asset('images/contacts/ziyastinov.png')">
                     </div>
                     <div class="contact-card__info">
                         <div class="contact-card__name">
@@ -222,6 +228,7 @@ Template Name: Контакты
             <div class="contact-card">
                 <div class="contact-card__top">
                     <div class="contact-card__image">
+                        <img src="@asset('images/contacts/dautov.png')">
                     </div>
                     <div class="contact-card__info">
                         <div class="contact-card__name">
