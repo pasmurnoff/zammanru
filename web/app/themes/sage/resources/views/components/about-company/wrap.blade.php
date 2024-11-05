@@ -6,7 +6,7 @@
             оборудования, включая компрессорные установки и насосные станции, с использованием компонентов от ведущих
             производителей.
         </p>
-        <a href="" class="btn_primary about-company__button">Подробнее</a>
+        <a href="/o-kompanii" class="btn_primary about-company__button">Подробнее</a>
         <div class="about-company__map">
             <img src="@asset('images/about-company/map.png')" alt="Карта расположения компании">
         </div>

@@ -15,8 +15,7 @@ Template Name: Продукция
         <h1 class="products-page__title"><?php the_title(); ?></h1>
         <div class="products__grid_onpage">
             <div class="product-card">
-                <a
-                    href="http://localhost:3000/product/%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d1%81%d0%ba%d0%b2%d0%b0%d0%b6%d0%b8%d0%bd%d0%bd%d1%8b%d0%b5-%d0%ba%d0%be%d0%bc%d0%bf%d1%80%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%bd%d1%8b%d0%b5/">
+                <a href="/product/мобильные-скважинные-компрессорные">
                     <h3 class="product-card__title">Мобильные скважинные компрессорные установки (МСКУ)</h3>
                     <div class="product-card__image-container">
                         <img src="@asset('images/products/product1.png')" alt="Мобильные скважинные компрессорные установки"
@@ -112,3 +111,23 @@ Template Name: Продукция
 <div class="page__contactus">
     @include('components.contactus.wrap')
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const link = document.querySelector(".page__button a");
+
+        function updateLinkText() {
+            if (window.innerWidth <= 768) {
+                link.textContent = "Смотреть каталог";
+            } else {
+                link.textContent = "Смотреть каталог полностью (PDF 1.8 MB)";
+            }
+        }
+
+        // Изначально обновляем текст ссылки при загрузке страницы
+        updateLinkText();
+
+        // Добавляем слушатель события для изменения текста при изменении размера окна
+        window.addEventListener("resize", updateLinkText);
+    });
+</script>

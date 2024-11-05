@@ -33,10 +33,11 @@
                         <a href="/produkciya">Продукция</a>
                         <div class="dropdown-content">
                             <div class="dropdown-wrap">
-                                <a class="dd-element" href="">Мобильные скважинные
+                                <a class="dd-element" href="/product/мобильные-скважинные-компрессорные/">Мобильные
+                                    скважинные
                                     компрессорные установки
                                     (МСКУ)</a>
-                                <a class="dd-element" href="/product/мобильные-скважинные-компрессорные/">Компрессорные
+                                <a class="dd-element">Компрессорные
                                     станции
                                     (КС)</a>
                                 <a class="dd-element" href="/produkciya/nasosnye-stantsii">Насосные станции (НС)</a>

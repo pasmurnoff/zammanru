@@ -110,6 +110,10 @@
 
       .events__description h3 {
         color: var(--primary); /* Изменение цвета текста при наведении */
+
+        @media (max-width: 768px) {
+          color: rgba(0, 0, 0, 1);
+        }
       }
     }
   }

@@ -7,6 +7,7 @@ $('.hamburger').on('click', function(e) {
   $('.path').toggleClass('active');
   $('.home').toggleClass('overflow');
   $('.mobmenu').toggleClass('act');
+  $('.mobmenu__menu').toggleClass('act');
   $('.header').addClass('scrolled');
 
   e.preventDefault();

@@ -9,22 +9,39 @@
     gap: 24px;
   }
 
+  &__left {
+    @media (max-width: 520px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &__wrap {
     display: flex;
     justify-content: space-between;
 
     @media (max-width: 520px) {
       flex-direction: column;
-      gap: 24px;
+      gap: 0;
     }
   }
 
   &__logo {
     margin-bottom: 46px;
+
+    @media (max-width: 520px) {
+      display: none;
+    }
   }
 
   &__socials {
     margin-bottom: 46px;
+
+    @media (max-width: 520px) {
+      order: 2;
+      margin-top: 24px;
+      margin-bottom: 36px;
+    }
   }
 
   &__slogan {
@@ -110,6 +127,11 @@
       font-size: 16px;
       line-height: 19.36px;
       font-weight: 400;
+
+      @media (max-width: 520px) {
+        font-size: 14px;
+        line-height: 16.94px;
+      }
     }
   }
 
@@ -123,6 +145,11 @@
       font-size: 16px;
       line-height: 19.36px;
       font-weight: 400;
+
+      @media (max-width: 520px) {
+        font-size: 14px;
+        line-height: 16.94px;
+      }
 
       &:hover {
         color: var(--primary);
@@ -139,6 +166,12 @@
   &__element {
     display: flex;
     gap: 8px;
+
+    img {
+      @media (max-width: 520px) {
+        width: 16px;
+      }
+    }
 
     span {
       color: #fff;

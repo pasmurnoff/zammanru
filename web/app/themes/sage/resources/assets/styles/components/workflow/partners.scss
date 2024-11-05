@@ -47,6 +47,10 @@
     transition: filter 0.3s ease; /* Плавный переход */
     opacity: 0.5;
 
+    @media (max-width: 520px) {
+      max-width: 100px;
+    }
+
     &:hover {
       opacity: 1;
       filter: none; /* Цветное изображение при наведении */

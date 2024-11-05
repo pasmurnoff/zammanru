@@ -31,16 +31,16 @@
   display: none;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 
   @media screen and (max-width: 520px) {
     display: flex;
   }
 
   .pagination-dot {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
     background-color: #0000000f;
     border-radius: 50%;
     border: none;
@@ -50,6 +50,8 @@
 
   .pagination-dot.active {
     background-color: var(--primary);
+    width: 8px;
+    height: 8px;
   }
 }
 

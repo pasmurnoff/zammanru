@@ -33,3 +33,16 @@
     }
   }
 }
+
+.mobile-title-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+
+  .main-page__title {
+    margin-bottom: 0;
+    color: #000;
+  }
+}

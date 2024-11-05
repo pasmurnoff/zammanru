@@ -70,6 +70,10 @@
   &__right {
     display: flex;
 
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
+
     img {
       width: 100%;
     }
@@ -100,6 +104,8 @@
 
     @media screen and (max-width: 520px) {
       padding: 12px 20px;
+      width: -webkit-fill-available;
+      width: fill-available;
     }
   }
 
@@ -123,7 +129,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      padding: 12px 28px;
+      padding: 14px 28px;
       margin-top: 12px;
     }
   }

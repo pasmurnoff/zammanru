@@ -105,6 +105,10 @@
 
   &:hover .product-card__title {
     color: var(--primary); /* Изменение цвета текста при ховере */
+
+    @media screen and (max-width: 768px) {
+      color: #000;
+    }
   }
 
   &__image-container {
@@ -117,6 +121,10 @@
 
     @media screen and (max-width: 1024px) {
       height: auto;
+    }
+
+    @media screen and (max-width: 520px) {
+      height: 200px;
     }
   }
 
@@ -165,6 +173,10 @@
 
   &:hover .product-card__circle-button {
     opacity: 1; /* Показываем кнопку при наведении */
+
+    @media screen and (max-width: 768px) {
+      opacity: 0;
+    }
   }
 
   &__circle-icon {

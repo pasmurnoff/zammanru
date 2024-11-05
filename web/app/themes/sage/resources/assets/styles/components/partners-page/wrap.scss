@@ -33,6 +33,11 @@
     &:hover {
       opacity: 1;
       filter: none; /* Цветное изображение при наведении */
+
+      @media (max-width: 520px) {
+        opacity: 0.5;
+        filter: grayscale(100%); /* Черно-белый эффект */
+      }
     }
   }
 }

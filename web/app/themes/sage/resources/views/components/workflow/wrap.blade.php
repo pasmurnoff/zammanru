@@ -49,7 +49,7 @@
         </div>
 
         <div class="workflow__action">
-            <a href="" class="btn_primary">Подробнее</a>
+            <a href="/partnery-page" class="btn_primary">Подробнее</a>
         </div>
 
     </div>
