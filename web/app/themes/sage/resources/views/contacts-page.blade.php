@@ -46,11 +46,14 @@ Template Name: Контакты
                         </div>
                     </div>
 
-                    <a href="" class="btn_primary btn_wdth">Карта партнера (1.2 МБ)</a>
+                    <a href="@asset('partner-map.docx')" download class="btn_primary btn_wdth">Карта партнера (1.2
+                        МБ)</a>
 
                 </div>
                 <div class="contacts-page__map">
-                    <img src="@asset('images/contacts/map.png')">
+                    <iframe style="border-radius: 24px; filter: grayscale(100%);"
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A7e2e47dda217960597ff3d6f7db871b6b9076b4d86448564219f596145e3127c&amp;source=constructor"
+                        width="100%" height="404" frameborder="0"></iframe>
                 </div>
             </div>
 

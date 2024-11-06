@@ -4,6 +4,7 @@
 
   &__title {
     position: relative;
+    margin-bottom: 24px !important;
     z-index: 99;
   }
 
@@ -29,7 +30,7 @@
     }
 
     @media screen and (max-width: 520px) {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 19.36px;
       color: rgba(0, 0, 0, 1);
     }
@@ -40,7 +41,7 @@
     position: relative;
 
     img {
-      margin-top: -400px;
+      margin-top: -370px;
       margin-bottom: -250px;
       max-width: 100%;
       height: auto;

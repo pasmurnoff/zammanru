@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="footer__slogan">
-                    <p>ЗАМАН – Ваш надежный партнер <br> в создании успешного будущего!</p>
+                    <p>ЗАМАН – Ваш надежный партнер в создании успешного будущего!</p>
                 </div>
                 <div class="footer__tags">
                     <a>#ЗАМАН</a> <a>#ВРЕМЯСОЗИДАТЬБУДУЩЕЕ</a>
@@ -40,7 +40,7 @@
                         <a href="#" class="openModal">Связаться</a>
                     </div>
                     <div class="footer-button__secondary">
-                        <a href="" class="footer-button__secondary">Карта партнера</a>
+                        <a href="@asset('partner-map.docx')" class="footer-button__secondary">Карта партнера</a>
                     </div>
                 </div>
             </div>
@@ -59,73 +59,88 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    const carousel = document.querySelector('.services__carousel');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
+    $(document).ready(function() {
+        const $carousel = $('.services__carousel');
+        const $prevButton = $('#prev');
+        const $nextButton = $('#next');
 
-    const scrollStep = 320; // Ширина одной карточки + отступы
+        // Фиксированная ширина одной карточки
+        const cardWidth = 400;
 
-    // Логика прокрутки при клике на кнопки
-    nextButton.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: scrollStep,
-            behavior: 'smooth'
+        // Прокрутка вперед
+        $nextButton.on('click', function() {
+            const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
+            const currentScrollLeft = $carousel.scrollLeft();
+            let newScrollPosition = currentScrollLeft + cardWidth;
+
+            if (newScrollPosition > maxScrollLeft) {
+                newScrollPosition = maxScrollLeft;
+            }
+
+            $carousel.animate({
+                scrollLeft: newScrollPosition
+            }, 50);
         });
-    });
 
-    prevButton.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: -scrollStep,
-            behavior: 'smooth'
+        // Прокрутка назад
+        $prevButton.on('click', function() {
+            const currentScrollLeft = $carousel.scrollLeft();
+            let newScrollPosition = currentScrollLeft - cardWidth;
+
+            if (newScrollPosition < 0) {
+                newScrollPosition = 0;
+            }
+
+            $carousel.animate({
+                scrollLeft: newScrollPosition
+            }, 50);
         });
-    });
 
-    // Логика для перетаскивания мышью и тачем
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
+        // Логика для drag & drop
+        let isDragging = false;
+        let startX;
+        let scrollStart;
 
-    carousel.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-        carousel.style.cursor = 'grabbing';
-    });
+        // Начало перетаскивания мышью
+        $carousel.on('mousedown', function(e) {
+            isDragging = true;
+            startX = e.pageX - $carousel.offset().left;
+            scrollStart = $carousel.scrollLeft();
+            $carousel.addClass('grabbing'); // Визуальная индикация
+        });
 
-    carousel.addEventListener('mouseleave', () => {
-        isDragging = false;
-        carousel.style.cursor = 'grab';
-    });
+        // Окончание перетаскивания мышью
+        $(document).on('mouseup', function() {
+            isDragging = false;
+            $carousel.removeClass('grabbing');
+        });
 
-    carousel.addEventListener('mouseup', () => {
-        isDragging = false;
-        carousel.style.cursor = 'grab';
-    });
+        // Перетаскивание мышью
+        $carousel.on('mousemove', function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - $carousel.offset().left;
+            const walk = (x - startX) * 1.5; // Коэффициент скорости перетаскивания
+            $carousel.scrollLeft(scrollStart - walk);
+        });
 
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2; // Коэффициент скорости прокрутки
-        carousel.scrollLeft = scrollLeft - walk;
-    });
+        // Поддержка сенсорных событий для touch-устройств
+        $carousel.on('touchstart', function(e) {
+            isDragging = true;
+            startX = e.touches[0].pageX - $carousel.offset().left;
+            scrollStart = $carousel.scrollLeft();
+        });
 
-    // Логика для сенсорных устройств
-    carousel.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        startX = e.touches[0].pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-    });
+        $carousel.on('touchend', function() {
+            isDragging = false;
+        });
 
-    carousel.addEventListener('touchend', () => {
-        isDragging = false;
-    });
-
-    carousel.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        const x = e.touches[0].pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
+        $carousel.on('touchmove', function(e) {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - $carousel.offset().left;
+            const walk = (x - startX) * 1.5;
+            $carousel.scrollLeft(scrollStart - walk);
+        });
     });
 </script>
 <script>

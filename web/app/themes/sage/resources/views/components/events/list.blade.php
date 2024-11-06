@@ -14,6 +14,13 @@ $query = new WP_Query([
         @while ($query->have_posts())
             @php $query->the_post() @endphp
             <div class="events__item">
+                @if (has_post_thumbnail())
+                    <img src="{{ get_the_post_thumbnail_url(null, 'full') }}" alt="{{ get_the_title() }}"
+                        class="events__image">
+                @else
+                    <!-- Если нет миниатюры, можно вставить стандартное изображение -->
+                    <img src="@asset('images/no-photo.png')" alt="Событие по умолчанию" class="events__image">
+                @endif
                 <div class="events__top">
                     <span class="events__date">{{ get_the_date('d.m.Y') }}</span>
                     <div class="events__description">
@@ -22,13 +29,6 @@ $query = new WP_Query([
                         </a>
                     </div>
                 </div>
-                @if (has_post_thumbnail())
-                    <img src="{{ get_the_post_thumbnail_url(null, 'full') }}" alt="{{ get_the_title() }}"
-                        class="events__image">
-                @else
-                    <!-- Если нет миниатюры, можно вставить стандартное изображение -->
-                    <img src="@asset('images/no-photo.png')" alt="Событие по умолчанию" class="events__image">
-                @endif
             </div>
         @endwhile
         @php wp_reset_postdata() @endphp

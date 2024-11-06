@@ -33,25 +33,10 @@
                         <a href="/produkciya">Продукция</a>
                         <div class="dropdown-content">
                             <div class="dropdown-wrap">
-                                <a class="dd-element" href="/product/мобильные-скважинные-компрессорные/">Мобильные
-                                    скважинные
-                                    компрессорные установки
-                                    (МСКУ)</a>
-                                <a class="dd-element">Компрессорные
-                                    станции
-                                    (КС)</a>
-                                <a class="dd-element" href="/produkciya/nasosnye-stantsii">Насосные станции (НС)</a>
-                                <a class="dd-element" href="/produkciya/blok-modulnye-zdaniya">Блочные модульные здания
-                                    и
-                                    металлоконструкции</a>
-                                <a class="dd-element" href="/produkciya/asu">Автоматизированные системы управления
-                                    (АСУ)</a>
-                                <a class="dd-element" href="/produkciya/udxr">Установки дозирования химических реагентов
-                                    (УДХР)</a>
-                                <a class="dd-element" href="/produkciya/zapchasti">Поставка запчастей к
-                                    нефтепромысловому оборудованию</a>
-                                <a class="dd-element" href="/produkciya/nestandartnaya-produkcya">Нестандартная
-                                    продукция</a>
+                                @foreach (App::productItems() as $product)
+                                    <a class="dd-element"
+                                        href="{{ get_permalink($product->ID) }}">{{ $product->post_title }}</a>
+                                @endforeach
                             </div>
                         </div>
                     </li>

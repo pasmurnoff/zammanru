@@ -1,6 +1,6 @@
 .partners {
   &__title {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 43.57px;
     font-weight: 600;
     margin-bottom: 36px;
@@ -26,7 +26,7 @@
     align-items: center;
 
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr); /* 3 логотипа в ряд на планшетах */
+      grid-template-columns: repeat(4, 1fr); /* 3 логотипа в ряд на планшетах */
     }
 
     @media (max-width: 768px) {
@@ -54,6 +54,11 @@
     &:hover {
       opacity: 1;
       filter: none; /* Цветное изображение при наведении */
+
+      @media (max-width: 1024px) {
+        opacity: 0.5;
+        filter: grayscale(100%);
+      }
     }
   }
 }

@@ -35,4 +35,13 @@ class App extends Controller
             'numberposts' => -1              // Получить все записи
         ]);
     }
+
+    public static function productItems()
+    {
+        return get_posts([
+            'post_type' => 'post',
+            'category_name' => 'product', // Слаг категории "Product"
+            'numberposts' => -1
+        ]);
+    }
 }

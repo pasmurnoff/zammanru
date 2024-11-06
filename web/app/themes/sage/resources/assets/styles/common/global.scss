@@ -20,8 +20,14 @@ a {
   position: relative;
 
   @media screen and (max-width: 1230px) {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 16px;
+    padding-right: 16px;
     width: auto;
   }
 }

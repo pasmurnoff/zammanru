@@ -34,7 +34,7 @@
       opacity: 1;
       filter: none; /* Цветное изображение при наведении */
 
-      @media (max-width: 520px) {
+      @media (max-width: 1024px) {
         opacity: 0.5;
         filter: grayscale(100%); /* Черно-белый эффект */
       }

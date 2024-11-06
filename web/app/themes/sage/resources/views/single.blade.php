@@ -221,6 +221,9 @@
             </div>
         </div>
     </section>
+    <div class="page__contactus">
+        @include('components.contactus.wrap')
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
@@ -228,6 +231,11 @@
         jQuery(document).ready(function() {
             // Инициализируем lightGallery для галереи с id="gallery"
             lightGallery(document.getElementById('gallery'), {
+                selector: 'a',
+                thumbnail: true
+            });
+
+            lightGallery(document.getElementById('gallery-mob'), {
                 selector: 'a',
                 thumbnail: true
             });
