@@ -1,3 +1,5 @@
+/* stylelint-disable declaration-colon-newline-after */
+
 .regular-page {
   &__title {
     font-size: 36px;
@@ -163,6 +165,7 @@
 //     }
 //   }
 // }
+
 .custom-gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -234,4 +237,61 @@
   @media screen and (max-width: 768px) {
     padding-top: 24px;
   }
+}
+
+#video_thumbnail {
+  a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%2300000" opacity="0.8"/><polygon points="25,20 25,44 45,32" fill="%23ffff"/></svg>')
+      no-repeat center center;
+    background-size: contain; /* Масштабируем кнопку */
+    z-index: 1; /* Размещаем кнопку поверх изображения */
+    pointer-events: none; /* Чтобы кнопка не блокировала клик по ссылке */
+  }
+}
+
+#video-mobile {
+  a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%2300000" opacity="0.8"/><polygon points="25,20 25,44 45,32" fill="%23ffff"/></svg>')
+      no-repeat center center;
+    background-size: contain; /* Масштабируем кнопку */
+    z-index: 1; /* Размещаем кнопку поверх изображения */
+    pointer-events: none; /* Чтобы кнопка не блокировала клик по ссылке */
+  }
+}
+
+.lg-video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; /* Устанавливает ширину автоматически */
+  height: auto; /* Устанавливает высоту автоматически */
+  margin: 0 auto; /* Центрирует видео */
+}
+
+.lg-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Убедитесь, что фон черный */
+}
+
+.lg-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

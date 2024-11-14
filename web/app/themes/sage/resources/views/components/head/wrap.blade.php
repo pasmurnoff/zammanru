@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="
-                                https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.min.js
-                                "></script>
+                                            https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.min.js
+                                            "></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/video/lg-video.min.js"></script>
+
     <link href="
     https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery.min.css
     " rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-video.min.css" rel="stylesheet">
     @php wp_head() @endphp
 </head>

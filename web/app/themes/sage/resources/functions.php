@@ -96,7 +96,8 @@ Container::getInstance()
  * On this file we only append another function files
  */
 require_once dirname(__DIR__ . '/resources') . '/functions/remove.php';
-
+require_once __DIR__ . '/functions/setup.php';
+require_once __DIR__ . '/functions/ajax.php';
 
 function use_custom_template_for_category_posts($template)
 {

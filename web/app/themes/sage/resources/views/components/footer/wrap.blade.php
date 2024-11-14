@@ -7,8 +7,12 @@
                 </div>
                 <div class="footer__socials">
                     <div class="fsocials">
-                        <img src="@asset('images/socials/telegram-footer.svg')">
-                        <img src="@asset('images/socials/vk-footer.svg')">
+                        <a href="https://t.me/zamman_company">
+                            <img src="@asset('images/socials/telegram-footer.svg')">
+                        </a>
+                        <a href="https://vk.com/zamman_company">
+                            <img src="@asset('images/socials/vk-footer.svg')">
+                        </a>
                     </div>
                 </div>
                 <div class="footer__slogan">
@@ -25,7 +29,7 @@
                         <img src="@asset('images/footer/place.svg')"><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/phone.svg')"><a href="tel:+7853424079"><span>+7 (853) 42-40-79,</span></a> <a
+                        <img src="@asset('images/footer/phone.svg')"><a href="tel:+7853424079"><span>+7 (8553) 42-40-79,</span></a> <a
                             href="tel:+79393104079"><span>+7 (939)
                                 310-40-79</span></a>
                     </div>
@@ -40,7 +44,8 @@
                         <a href="#" class="openModal">Связаться</a>
                     </div>
                     <div class="footer-button__secondary">
-                        <a href="@asset('partner-map.docx')" class="footer-button__secondary">Карта партнера</a>
+                        <a href="/app/uploads/2024/11/partnermap.docx" download class="footer-button__secondary">Карта
+                            партнера</a>
                     </div>
                 </div>
             </div>
@@ -147,6 +152,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('contactModal');
         const openButtons = document.querySelectorAll('.openModal'); // Все кнопки с классом openModal
+        const closeButton = document.querySelector('.close-button');
 
         // Добавляем обработчик для каждой кнопки
         openButtons.forEach(button => {
@@ -154,6 +160,10 @@
                 event.preventDefault();
                 modal.style.display = 'flex'; // Показать модальное окно
             });
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
         });
 
         // Закрытие модального окна при клике на затемнённую область

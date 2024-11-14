@@ -7,11 +7,12 @@
                     <h2>Связаться</h2>
                 </div>
                 <div class="contactus__form">
-                    <form class="cform">
-                        <input type="text" placeholder="Имя">
-                        <input type="text" placeholder="Номер или почта">
+                    <form class="cform" id="contact-form">
+                        <input type="text" name="name" placeholder="Имя">
+                        <input type="text" name="contact" placeholder="Номер или почта">
                         <input type="submit" value="Отправить заявку">
                     </form>
+                    <div id="form-response" style="display:none;"></div>
                 </div>
             </div>
             <picture class="contactus__right">

@@ -68,9 +68,8 @@
                     <div class="slide">
                         <div class="service-card" style="height: 135px">
                             <div class="service-card__icon"><img src="@asset('images/services/num8.svg')"></div>
-                            <p class="service-card__description">Разработка инструкций и рекомендаций по эксплуатации,
-                                техническому
-                                обслуживанию </p>
+                            <p class="service-card__description">Разработка инструкций по эксплуатации и рекомендации по
+                                оптимизации работы НПО </p>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,9 @@ class App extends Controller
         return get_posts([
             'post_type' => 'post',
             'category_name' => 'product', // Слаг категории "Product"
-            'numberposts' => -1
+            'numberposts' => -1,
+            'orderby' => 'date',              // Сортировать по дате
+            'order' => 'ASC',   
         ]);
     }
 }

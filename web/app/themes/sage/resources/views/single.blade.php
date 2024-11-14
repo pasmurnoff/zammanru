@@ -15,12 +15,24 @@
 
                 @php
                     $images = get_field('event-gallery'); // Получаем изображения из поля ACF 'event-gallery'
+                    $video_url = get_field('video_url'); // Получаем URL видео
+                    $video_thumbnail = get_field('video_thumbnail'); // Превью для видео
                 @endphp
 
                 @if ($images)
                     <!-- Мобильная галерея -->
                     <div id="slider4" class="slider-container">
                         <div class="slider" id="gallery-mob">
+                            {{-- Если есть видео, добавляем его в мобильную галерею --}}
+                            @if ($video_url && $video_thumbnail)
+                                <div class="slide" id="video_thumbnail">
+                                    <a class="video-lightbox" data-lg-size="1280-720"
+                                        data-video='{"source": [{"src":"{{ $video_url }}", "type":"video/mp4"}], "attributes": {"controls": true}}'>
+                                        <img src="{{ $video_thumbnail['url'] }}" alt="Видео превью" class="mobile-gallery">
+                                    </a>
+                                </div>
+                            @endif
+
                             @foreach ($images as $image)
                                 <div class="slide">
                                     <a href="{{ $image['url'] }}" data-src="{{ $image['url'] }}"
@@ -37,28 +49,53 @@
                 <div class="regular-page__gallery">
                     @php
                         $images = get_field('event-gallery'); // Подставь правильное название поля ACF
+                        $video_url = get_field('video_url'); // Получаем URL видео
+                        $video_thumbnail = get_field('video_thumbnail'); // Превью для видео
                     @endphp
 
                     @if ($images)
                         <div class="custom-gallery-grid" id="gallery">
-                            {{-- Первое изображение выводится крупным --}}
-                            <div class="custom-gallery-main-image">
-                                <a href="{{ $images[0]['url'] }}" data-src="{{ $images[0]['url'] }}"
-                                    data-sub-html="{{ $images[0]['alt'] }}">
-                                    <img src="{{ $images[0]['url'] }}" alt="{{ $images[0]['alt'] }}"
-                                        class="custom-large-image">
-                                </a>
-                            </div>
+                            {{-- Если есть видео, выводим его крупным --}}
+                            @if ($video_url && $video_thumbnail)
+                                <div class="custom-gallery-main-image" id="video_thumbnail">
+                                    <a class="video-lightbox" data-lg-size="1280-720"
+                                        data-video='{"source": [{"src":"{{ $video_url }}", "type":"video/mp4"}], "attributes": {"controls": true}}'>
+                                        <img src="{{ $video_thumbnail['url'] }}" alt="Видео превью"
+                                            class="custom-large-image">
+                                    </a>
+                                </div>
+                            @elseif ($images)
+                                {{-- Если видео нет, выводим крупным первое изображение --}}
+                                <div class="custom-gallery-main-image">
+                                    <a href="{{ $images[0]['url'] }}" data-src="{{ $images[0]['url'] }}"
+                                        data-sub-html="{{ $images[0]['alt'] }}">
+                                        <img src="{{ $images[0]['url'] }}" alt="{{ $images[0]['alt'] }}"
+                                            class="custom-large-image">
+                                    </a>
+                                </div>
+                            @endif
 
-                            {{-- Миниатюры остальных изображений под большим изображением по 4 в ряд --}}
+                            {{-- Маленькие изображения (и видео, если есть) --}}
                             <div class="custom-small-images">
-                                @foreach (array_slice($images, 1) as $image)
-                                    <a href="{{ $image['url'] }}" data-src="{{ $image['url'] }}"
-                                        data-sub-html="{{ $image['alt'] }}">
-                                        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}"
+                                {{-- Если есть видео, добавляем первое изображение в маленькие --}}
+                                @if ($video_url && $images)
+                                    <a href="{{ $images[0]['url'] }}" data-src="{{ $images[0]['url'] }}"
+                                        data-sub-html="{{ $images[0]['alt'] }}">
+                                        <img src="{{ $images[0]['url'] }}" alt="{{ $images[0]['alt'] }}"
                                             class="custom-small-image">
                                     </a>
-                                @endforeach
+                                @endif
+
+                                {{-- Остальные изображения --}}
+                                @if ($images)
+                                    @foreach (array_slice($images, 1) as $image)
+                                        <a href="{{ $image['url'] }}" data-src="{{ $image['url'] }}"
+                                            data-sub-html="{{ $image['alt'] }}">
+                                            <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}"
+                                                class="custom-small-image">
+                                        </a>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     @endif
@@ -180,7 +217,8 @@
                                 <div class="additionally-files__gallery" id="cerfs">
                                     @foreach ($cerfs as $image)
                                         <div class="additionally-gallery-item">
-                                            <a href="{{ esc_url($image['url']) }}" data-src="{{ esc_url($image['url']) }}"
+                                            <a href="{{ esc_url($image['url']) }}"
+                                                data-src="{{ esc_url($image['url']) }}"
                                                 data-sub-html="{{ esc_attr($image['alt']) }}" target="_blank">
                                                 <img src="{{ esc_url($image['url']) }}"
                                                     alt="{{ esc_attr($image['alt']) }}" />
@@ -204,7 +242,8 @@
                                 <div class="additionally-files__gallery" id="reviews">
                                     @foreach ($cerfs as $image)
                                         <div class="additionally-gallery-item">
-                                            <a href="{{ esc_url($image['url']) }}" data-src="{{ esc_url($image['url']) }}"
+                                            <a href="{{ esc_url($image['url']) }}"
+                                                data-src="{{ esc_url($image['url']) }}"
                                                 data-sub-html="{{ esc_attr($image['alt']) }}" target="_blank">
                                                 <img src="{{ esc_url($image['url']) }}"
                                                     alt="{{ esc_attr($image['alt']) }}" />
@@ -231,13 +270,17 @@
         jQuery(document).ready(function() {
             // Инициализируем lightGallery для галереи с id="gallery"
             lightGallery(document.getElementById('gallery'), {
-                selector: 'a',
-                thumbnail: true
+                selector: 'a', // Все ссылки внутри контейнера
+                thumbnail: true, // Включение миниатюр
+                plugins: [lgVideo], // Подключение плагина для видео
+                videoMaxWidth: '100%', // Максимальная ширина видео
             });
 
             lightGallery(document.getElementById('gallery-mob'), {
-                selector: 'a',
-                thumbnail: true
+                selector: 'a', // Все ссылки внутри контейнера
+                thumbnail: true, // Включение миниатюр
+                plugins: [lgVideo], // Подключение плагина для видео
+                videoMaxWidth: '100%', // Максимальная ширина видео
             });
 
             // Инициализируем lightGallery для галереи с id="cerfs"
@@ -253,4 +296,6 @@
             });
         });
     </script>
+
+    <script></script>
 @endsection
