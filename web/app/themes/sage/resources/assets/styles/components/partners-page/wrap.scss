@@ -39,5 +39,14 @@
         filter: grayscale(100%); /* Черно-белый эффект */
       }
     }
+
+    &_aloil {
+      max-width: 100%;
+      height: auto;
+      filter: none;
+      opacity: 1;
+      transition: 0.3s ease;
+    }
   }
 }
+

@@ -97,7 +97,7 @@ Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 Config::define('DISALLOW_FILE_EDIT', true);
 // Disable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', true);
-
+Config::define('FS_METHOD', 'direct');
 /**
  * Debugging Settings
  */
@@ -128,3 +128,9 @@ Config::apply();
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+@ini_set('upload_max_filesize', '128M');
+@ini_set('post_max_size', '128M');
+@ini_set('memory_limit', '256M');
+@ini_set('max_execution_time', '300');
+@ini_set('max_input_time', '300');

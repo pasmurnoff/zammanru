@@ -60,5 +60,14 @@
         filter: grayscale(100%);
       }
     }
+
+    &_aloil {
+      max-width: 150px;
+      height: auto;
+      filter: none; /* Черно-белый эффект */
+      transition: 0.3s ease; /* Плавный переход */
+      opacity: 1;
+    }
   }
 }
+
