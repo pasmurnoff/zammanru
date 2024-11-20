@@ -31,8 +31,8 @@ Template Name: Контакты
                             <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                         </div>
                         <div class="contact-info__text">
-                            <span>+7 (8553) 42-40-79</span>
-                            <span>+7 (939) 310-40-79</span>
+                            <a href="tel:+78553424079"><span>+7 (8553) 42-40-79</span></a>
+                            <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span>
                         </div>
                     </div>
 
@@ -41,8 +41,8 @@ Template Name: Контакты
                             <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                         </div>
                         <div class="contact-info__text">
-                            <span>mail@zamman.com</span>
-                            <span>omts@zamman.com</span>
+                            <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                            <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (939) 310-40-79</span>
+                                <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span></a>
                             </div>
                         </div>
 
@@ -88,11 +88,48 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="contact-card">
+                    <div class="contact-card__top">
+                        <div class="contact-card__image">
+                            <img src="@asset('images/contacts/kosurov.png')">
+                        </div>
+                        <div class="contact-card__info">
+                            <div class="contact-card__name">
+                                <span>Литвинов Игорь
+                                    Иванович</span>
+                            </div>
+                            <div class="contact-card__position">
+                                <span>Первый заместитель директора</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card__contacts">
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="tel:+79274714802"><span>+7 (927) 471-48-02</span></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="contact-card">
                     <div class="contact-card__top">
                         <div class="contact-card__image">
@@ -115,7 +152,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (919) 629-39-83</span>
+                                <a href="tel:+79196293983"><span>+7 (919) 629-39-83</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -123,7 +160,8 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+
                             </div>
                         </div>
                     </div>
@@ -149,7 +187,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (917) 241-59-51</span>
+                                <a href="tel:+79172415951"><span>+7 (917) 241-59-51</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -157,7 +195,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +222,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (906) 117-46-81</span>
+                                <a href="+79061174681"><span>+7 (906) 117-46-81</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -192,7 +230,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -218,7 +256,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (927) 488-61-31</span>
+                                <a href="+79274886131"><span>+7 (927) 488-61-31</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -226,7 +264,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -251,7 +289,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>+7 (917) 276-49-18</span>
+                                <a href="+79172764918"><span>+7 (917) 276-49-18</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -259,7 +297,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <span>mail@zamman.com</span>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,10 @@
       filter: none; /* Черно-белый эффект */
       transition: 0.3s ease; /* Плавный переход */
       opacity: 1;
+
+      @media (max-width: 1024px) {
+        pointer-events: none;
+      }
     }
   }
 }
-

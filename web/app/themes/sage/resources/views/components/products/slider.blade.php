@@ -50,12 +50,13 @@
             </div>
             <div class="slide">
                 <div class="product-card" style="height: 260px">
-                    <a href="product/насосные-станции-нс/">
-                        <h3 class="product-card__title">Насосные станции (НС)</h3>
+                    <a href="product/блочные-модульные-здания-и-металлоко/">
+                        <h3 class="product-card__title">Блочные модульные здания и металлоконструкции</h3>
                     </a>
-                    <a href="product/насосные-станции-нс/">
+                    <a href="product/блочные-модульные-здания-и-металлоко/">
                         <div class="product-card__image-container">
-                            <img src="@asset('images/products/product3.png')" alt="Насосные станции" class="product-card__image">
+                            <img src="@asset('images/products/product4.png')" alt="Блочные модульные здания и металлоконструкции"
+                                class="product-card__image">
                         </div>
                     </a>
                     <a href="#" class="product-card__circle-button">

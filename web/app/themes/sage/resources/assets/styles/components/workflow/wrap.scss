@@ -64,7 +64,7 @@
     align-items: center;
     gap: 12px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* 1 карточка в ряд на мобильных */
     }
@@ -91,7 +91,7 @@
     }
 
     &:nth-child(5) {
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         grid-column: span 2;
       }
     }
@@ -118,7 +118,7 @@
       transform: translateY(-50%);
       z-index: 9;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         display: none;
       }
     }

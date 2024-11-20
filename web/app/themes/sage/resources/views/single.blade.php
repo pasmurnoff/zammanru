@@ -28,7 +28,7 @@
                                 <div class="slide" id="video_thumbnail">
                                     <a class="video-lightbox" data-lg-size="1280-720"
                                         data-video='{"source": [{"src":"{{ $video_url }}", "type":"video/mp4"}], "attributes": {"controls": true}}'>
-                                        <img src="{{ $video_thumbnail['url'] }}" alt="Видео превью" class="mobile-gallery">
+                                        <img src="{{ $video_thumbnail['url'] }}" class="mobile-gallery">
                                     </a>
                                 </div>
                             @endif
@@ -60,8 +60,7 @@
                                 <div class="custom-gallery-main-image" id="video_thumbnail">
                                     <a class="video-lightbox" data-lg-size="1280-720"
                                         data-video='{"source": [{"src":"{{ $video_url }}", "type":"video/mp4"}], "attributes": {"controls": true}}'>
-                                        <img src="{{ $video_thumbnail['url'] }}" alt="Видео превью"
-                                            class="custom-large-image">
+                                        <img src="{{ $video_thumbnail['url'] }}" class="custom-large-image">
                                     </a>
                                 </div>
                             @elseif ($images)

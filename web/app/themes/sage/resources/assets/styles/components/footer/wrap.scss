@@ -90,6 +90,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 48px;
+
+    @media (max-width: 375px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__divider {
@@ -109,14 +113,10 @@
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 920px) {
       flex-direction: column;
       gap: 40px;
       text-align: center;
-
-      @media (max-width: 520px) {
-        gap: 24px;
-      }
     }
   }
 
