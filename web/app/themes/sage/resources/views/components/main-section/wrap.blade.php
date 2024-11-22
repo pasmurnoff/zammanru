@@ -1,5 +1,5 @@
 <section class="main-section">
-    <video class="main-section__video" autoplay muted loop>
+    <video id="video" class="main-section__video" playsinline playsInline autoplay muted loop>
         <source src="https://psmrnv.ru/zamman/video.mp4" type="video/mp4">
         Ваш браузер не поддерживает тег видео.
     </video>

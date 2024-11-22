@@ -56,7 +56,7 @@
                 <span>© 2012-2024, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
             </div>
             <div class="footer__links">
-                <a href="">Политика конфиденциальности</a>
+                <a>Политика конфиденциальности</a>
             </div>
         </div>
     </div>
@@ -72,19 +72,28 @@
         // Фиксированная ширина одной карточки
         const cardWidth = 400;
 
+        // Клонирование элементов для зацикливания
+        const $items = $carousel.children();
+        $carousel.append($items.clone()); // Клонируем элементы в конец
+        $carousel.prepend($items.clone()); // Клонируем элементы в начало
+
+        // Устанавливаем начальную позицию скролла (в центр)
+        const initialScrollLeft = $items.length * cardWidth;
+        $carousel.scrollLeft(initialScrollLeft);
+
         // Прокрутка вперед
         $nextButton.on('click', function() {
             const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
             const currentScrollLeft = $carousel.scrollLeft();
             let newScrollPosition = currentScrollLeft + cardWidth;
 
-            if (newScrollPosition > maxScrollLeft) {
-                newScrollPosition = maxScrollLeft;
-            }
-
             $carousel.animate({
                 scrollLeft: newScrollPosition
-            }, 50);
+            }, 300, function() {
+                if (newScrollPosition >= maxScrollLeft) {
+                    $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
+                }
+            });
         });
 
         // Прокрутка назад
@@ -92,13 +101,13 @@
             const currentScrollLeft = $carousel.scrollLeft();
             let newScrollPosition = currentScrollLeft - cardWidth;
 
-            if (newScrollPosition < 0) {
-                newScrollPosition = 0;
-            }
-
             $carousel.animate({
                 scrollLeft: newScrollPosition
-            }, 50);
+            }, 300, function() {
+                if (newScrollPosition <= 0) {
+                    $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
+                }
+            });
         });
 
         // Логика для drag & drop
@@ -146,8 +155,20 @@
             const walk = (x - startX) * 1.5;
             $carousel.scrollLeft(scrollStart - walk);
         });
+
+        // Проверяем позицию скролла для зацикливания
+        $carousel.on('scroll', function() {
+            const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
+
+            if ($carousel.scrollLeft() >= maxScrollLeft - cardWidth) {
+                $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
+            } else if ($carousel.scrollLeft() <= 0) {
+                $carousel.scrollLeft(maxScrollLeft - initialScrollLeft); // Возвращаем в конец
+            }
+        });
     });
 </script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('contactModal');
@@ -171,6 +192,84 @@
             if (event.target === modal) {
                 modal.style.display = 'none'; // Скрыть модальное окно
             }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoElement = document.getElementById('video');
+
+        if (videoElement) {
+            videoElement.muted = true; // Гарантируем отсутствие звука
+            videoElement.addEventListener('canplaythrough', () => {
+                videoElement.play().catch((error) => {
+                    console.warn('Ошибка автозапуска видео в Safari:', error);
+                });
+            });
+        }
+    });
+</script>
+
+
+
+<script>
+    $(document).ready(function() {
+        const modal = $('#customModal');
+        const modalMessage = $('#modalMessage');
+        const closeModal = $('.custom-modal__close');
+
+        // Функция для показа модального окна
+        function showModal(message) {
+            modalMessage.text(message); // Устанавливаем текст сообщения
+            modal.fadeIn(300); // Показываем модальное окно
+
+            // Автоматическое закрытие через 3 секунды
+            setTimeout(() => {
+                modal.fadeOut(300);
+            }, 3000);
+        }
+
+        // Закрытие модального окна
+        closeModal.on('click', function() {
+            modal.fadeOut(300); // Скрываем окно при нажатии на крестик
+        });
+
+        $(window).on('click', function(event) {
+            if ($(event.target).is(modal)) {
+                modal.fadeOut(300); // Закрытие при клике вне содержимого модального окна
+            }
+        });
+
+        // Универсальный обработчик для всех форм
+        $('.cform').on('submit', function(e) {
+            e.preventDefault(); // Предотвращаем стандартное поведение формы
+
+            const form = $(this); // Текущая форма
+            const responseContainer = form.data(
+                'response-container'); // Получаем указанный контейнер для сообщения
+            const formData = form.serialize();
+
+            $.ajax({
+                url: '', // Укажите URL обработчика
+                type: 'POST',
+                dataType: 'json', // Ждём JSON-ответ
+                data: formData,
+                success: function(response) {
+                    if (response.status === 'success') {
+                        form.fadeOut(300, function() {
+                            $(`#${responseContainer}`).html(
+                                '<p style="color: green; font-size: 16px;">' +
+                                response.message +
+                                '</p>');
+                        });
+                    } else {
+                        showModal(response.message); // Показываем сообщение об ошибке
+                    }
+                },
+                error: function() {
+                    showModal('Произошла ошибка при отправке.');
+                }
+            });
         });
     });
 </script>

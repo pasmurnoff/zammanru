@@ -38,6 +38,28 @@
       grid-template-columns: repeat(2, 1fr); /* 1 логотип в ряд на мобильных */
       gap: 28px;
     }
+
+    &_bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 4 логотипа в ряд */
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      @media (max-width: 520px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+    }
   }
 
   &__item {
@@ -70,6 +92,32 @@
 
       @media (max-width: 1024px) {
         pointer-events: none;
+      }
+    }
+
+    &_last {
+      max-width: 150px;
+      height: auto;
+      filter: grayscale(100%); /* Черно-белый эффект */
+      transition: filter 0.3s ease; /* Плавный переход */
+      opacity: 0.5;
+
+      @media (max-width: 768px) {
+        grid-column: span 2;
+      }
+
+      @media (max-width: 520px) {
+        max-width: 100px;
+      }
+
+      &:hover {
+        opacity: 1;
+        filter: none; /* Цветное изображение при наведении */
+
+        @media (max-width: 1024px) {
+          opacity: 0.5;
+          filter: grayscale(100%);
+        }
       }
     }
   }

@@ -81,16 +81,18 @@ Template Name: Партнеры 2
                         </div>
                     </div>
                 </div>
-
-                <div class="partners-page-list">
-                    <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners-page__item">
-                    <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners-page__item">
-                    <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners-page__item">
-                    <img src="@asset('images/partners/aloil.svg')" id="aloil-logo" alt="Алоил" class="partners-page__item_aloil">
-                    <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners-page__item">
-                    <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners-page__item">
-                    <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item">
-                    <img src="@asset('images/partners/2.svg')" alt="ТроицкНефть" class="partners-page__item">
+                <div class="partners-logos">
+                    <div class="partners-page-list">
+                        <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners-page__item">
+                        <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners-page__item">
+                        <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners-page__item">
+                        <img src="@asset('images/partners/aloil.svg')" id="aloil-logo" alt="Алоил" class="partners-page__item_aloil">
+                    </div>
+                    <div class="partners-page-list_bottom">
+                        <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners-page__item">
+                        <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners-page__item">
+                        <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item_last">
+                    </div>
                 </div>
             </div>
         </div>

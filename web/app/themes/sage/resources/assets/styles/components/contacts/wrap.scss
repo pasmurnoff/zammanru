@@ -14,13 +14,6 @@
     flex-direction: column;
     gap: 36px;
 
-    a {
-      @media (max-width: 768px) {
-        width: -webkit-fill-available;
-        text-align: center;
-      }
-    }
-
     @media (max-width: 1024px) {
       gap: 26px;
     }
@@ -176,4 +169,43 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+}
+
+.map-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 24px;
+  }
+
+  a {
+    display: flex;
+    background: #ff8e001a;
+    padding: 16px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 500;
+    color: #ff8e00;
+    justify-content: center;
+
+    &:hover {
+      background: #ff8c0011;
+    }
+  }
+}
+
+.downloadbutton {
+  @media (max-width: 768px) {
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+}
+
+.contact-info__text span:hover {
+  color: var(--primary);
 }

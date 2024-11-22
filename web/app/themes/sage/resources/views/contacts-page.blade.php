@@ -32,7 +32,7 @@ Template Name: Контакты
                         </div>
                         <div class="contact-info__text">
                             <a href="tel:+78553424079"><span>+7 (8553) 42-40-79</span></a>
-                            <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span>
+                            <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span></a>
                         </div>
                     </div>
 
@@ -46,7 +46,8 @@ Template Name: Контакты
                         </div>
                     </div>
 
-                    <a href="@asset('partner-map.docx')" download class="btn_primary btn_wdth">Карта партнера (1.2
+                    <a href="/app/uploads/2024/11/partnermap.docx" download
+                        class="btn_primary btn_wdth downloadbutton">Карта партнера (1.2
                         МБ)</a>
 
                 </div>
@@ -54,6 +55,11 @@ Template Name: Контакты
                     <iframe style="border-radius: 24px; filter: grayscale(100%);"
                         src="https://yandex.ru/map-widget/v1/?um=constructor%3A7e2e47dda217960597ff3d6f7db871b6b9076b4d86448564219f596145e3127c&amp;source=constructor"
                         width="100%" height="404" frameborder="0"></iframe>
+
+                    <div class="map-buttons">
+                        <a href="">Яндекс.Карты</a>
+                        <a href="">2GIS</a>
+                    </div>
                 </div>
             </div>
 
@@ -97,7 +103,7 @@ Template Name: Контакты
                 <div class="contact-card">
                     <div class="contact-card__top">
                         <div class="contact-card__image">
-                            <img src="@asset('images/contacts/kosurov.png')">
+                            <img src="@asset('images/contacts/litvinov.png')">
                         </div>
                         <div class="contact-card__info">
                             <div class="contact-card__name">
@@ -222,7 +228,40 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="+79061174681"><span>+7 (906) 117-46-81</span></a>
+                                <a href="tel:+79061174681"><span>+7 (906) 117-46-81</span></a>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card__top">
+                        <div class="contact-card__image">
+                            <img src="@asset('images/contacts/dautov.png')">
+                        </div>
+                        <div class="contact-card__info">
+                            <div class="contact-card__name">
+                                <span>Даутов Фархат Наилевич</span>
+                            </div>
+                            <div class="contact-card__position">
+                                <span>Руководитель производственной службы</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card__contacts">
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="tel:+79172764918"><span>+7 (917) 276-49-18</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -264,40 +303,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card__top">
-                        <div class="contact-card__image">
-                            <img src="@asset('images/contacts/dautov.png')">
-                        </div>
-                        <div class="contact-card__info">
-                            <div class="contact-card__name">
-                                <span>Даутов Фархат Наилевич</span>
-                            </div>
-                            <div class="contact-card__position">
-                                <span>Руководитель производственной службы</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-card__contacts">
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="+79172764918"><span>+7 (917) 276-49-18</span></a>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                                <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
                             </div>
                         </div>
                     </div>

@@ -98,6 +98,7 @@ Container::getInstance()
 require_once dirname(__DIR__ . '/resources') . '/functions/remove.php';
 require_once __DIR__ . '/functions/setup.php';
 require_once __DIR__ . '/functions/ajax.php';
+require_once dirname(__DIR__ . '/resources') . '/functions/send-mail.php';
 
 function use_custom_template_for_category_posts($template)
 {

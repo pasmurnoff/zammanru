@@ -4,19 +4,31 @@
   gap: 16px;
   justify-items: center;
   align-items: center;
-  padding-bottom: 100px;
-
-  @media (max-width: 1024px) {
-    padding-bottom: 80px;
-  }
-
-  @media (max-width: 768px) {
-    padding-bottom: 60px;
-  }
 
   @media (max-width: 520px) {
-    padding-bottom: 48px;
     grid-template-columns: repeat(2, 1fr); /* 4 логотипа в ряд */
+  }
+
+  &_bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 логотипа в ряд */
+    gap: 16px;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 100px;
+
+    @media (max-width: 1024px) {
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 768px) {
+      padding-bottom: 60px;
+    }
+
+    @media (max-width: 520px) {
+      padding-bottom: 48px;
+      grid-template-columns: repeat(2, 1fr); /* 4 логотипа в ряд */
+    }
   }
 }
 
@@ -47,6 +59,29 @@
       opacity: 1;
       transition: 0.3s ease;
     }
+
+    &_last {
+      max-width: 100%;
+      height: auto;
+      filter: grayscale(100%); /* Черно-белый эффект */
+      transition: filter 0.3s ease; /* Плавный переход */
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+        filter: none; /* Цветное изображение при наведении */
+
+        @media (max-width: 1024px) {
+          opacity: 0.5;
+          filter: grayscale(100%); /* Черно-белый эффект */
+        }
+      }
+    }
   }
 }
 
+.partners-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
