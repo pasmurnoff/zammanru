@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers .= "Reply-To: $contact\r\n";
 
     if (mail($to, $subject, $message, $headers)) {
-        echo json_encode(['status' => 'success', 'message' => 'Сообщение отправлено успешно.']);
+        echo json_encode(['status' => 'success', 'message' => 'Ваша заявка отправлена!']);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Ошибка при отправке сообщения.']);
     }

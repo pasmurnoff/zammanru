@@ -178,3 +178,15 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+#responseMessage2 {
+  text-align: center;
+}
+
+#responseMessage1 {
+  text-align: center;
+
+  button {
+    display: none;
+  }
+}

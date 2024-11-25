@@ -209,45 +209,46 @@
         }
     });
 </script>
-
-
-
 <script>
     $(document).ready(function() {
-        const modal = $('#customModal');
-        const modalMessage = $('#modalMessage');
-        const closeModal = $('.custom-modal__close');
+        const modal = $('#contactModal');
+        const modalHeader = $('#modal-header');
+        const closeModal = $('.close-button');
+        const closeButtonId = '#close-button';
 
         // Функция для показа модального окна
-        function showModal(message) {
-            modalMessage.text(message); // Устанавливаем текст сообщения
+        function showModal() {
             modal.fadeIn(300); // Показываем модальное окно
-
-            // Автоматическое закрытие через 3 секунды
-            setTimeout(() => {
-                modal.fadeOut(300);
-            }, 3000);
+            modalHeader.show(); // Показываем заголовок, если он скрыт
+            $('#form2').show(); // Показываем форму в модальном окне, если она скрыта
+            $('#responseMessage2').empty(); // Очищаем предыдущие сообщения
         }
 
-        // Закрытие модального окна
+        // Закрытие модального окна при нажатии на крестик
         closeModal.on('click', function() {
-            modal.fadeOut(300); // Скрываем окно при нажатии на крестик
+            modal.fadeOut(300); // Скрываем окно
         });
 
+        // Закрытие модального окна при клике вне его содержимого
         $(window).on('click', function(event) {
             if ($(event.target).is(modal)) {
-                modal.fadeOut(300); // Закрытие при клике вне содержимого модального окна
+                modal.fadeOut(300); // Закрытие окна
             }
+        });
+
+        // Закрытие модального окна при клике на кнопку с id="close-button"
+        modal.on('click', closeButtonId, function() {
+            modal.fadeOut(300); // Скрываем окно
         });
 
         // Универсальный обработчик для всех форм
         $('.cform').on('submit', function(e) {
             e.preventDefault(); // Предотвращаем стандартное поведение формы
 
-            const form = $(this); // Текущая форма
-            const responseContainer = form.data(
-                'response-container'); // Получаем указанный контейнер для сообщения
-            const formData = form.serialize();
+            const currentForm = $(this); // Текущая форма
+            const responseContainerId = currentForm.data('response-container');
+            const responseContainer = $(`#${responseContainerId}`);
+            const formData = currentForm.serialize();
 
             $.ajax({
                 url: '', // Укажите URL обработчика
@@ -256,18 +257,26 @@
                 data: formData,
                 success: function(response) {
                     if (response.status === 'success') {
-                        form.fadeOut(300, function() {
-                            $(`#${responseContainer}`).html(
-                                '<p style="color: green; font-size: 16px;">' +
+                        // Если форма находится в модальном окне, скрываем заголовок и форму
+                        if (currentForm.closest('#contactModal').length) {
+                            modalHeader.fadeOut(300);
+                        }
+                        currentForm.fadeOut(300, function() {
+                            // Показываем сообщение об успехе
+                            responseContainer.html(
+                                '<img src="https://psmrnv.ru/zamman/check.svg" style="margin-bottom: 12px;"><p style="font-size:32px; line-height: 38.73px; letter-spacing: -1%; font-weight: 600;">' +
                                 response.message +
-                                '</p>');
+                                '</p>' +
+                                '<button id="close-button" class="btn_primary" style="margin-top: 24px; width: 100%;">Закрыть</button>'
+                            );
                         });
                     } else {
-                        showModal(response.message); // Показываем сообщение об ошибке
+                        // Показываем сообщение об ошибке
+                        responseContainer.html('<p>' + response.message + '</p>');
                     }
                 },
                 error: function() {
-                    showModal('Произошла ошибка при отправке.');
+                    responseContainer.html('<p>Произошла ошибка при отправке.</p>');
                 }
             });
         });

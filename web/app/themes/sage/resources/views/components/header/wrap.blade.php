@@ -115,7 +115,7 @@
             </svg>
 
         </div>
-        <div class="contactus__title">
+        <div class="contactus__title" id="modal-header">
             <h2>Связаться</h2>
         </div>
         <div class="contactus__form">

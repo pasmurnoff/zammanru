@@ -57,8 +57,8 @@ Template Name: Контакты
                         width="100%" height="404" frameborder="0"></iframe>
 
                     <div class="map-buttons">
-                        <a href="">Яндекс.Карты</a>
-                        <a href="">2GIS</a>
+                        <a href="https://yandex.ru/maps/-/CDxXqHNK">Яндекс.Карты</a>
+                        <a href="https://go.2gis.com/6g6f2">2GIS</a>
                     </div>
                 </div>
             </div>

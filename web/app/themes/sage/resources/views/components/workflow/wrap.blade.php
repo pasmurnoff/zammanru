@@ -39,7 +39,10 @@
                             <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners__item">
                             <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners__item">
                             <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners__item">
-                            <img src="@asset('images/partners/aloil.svg')" id="aloil-logo" alt="Алоил" class="partners__item_aloil">
+                            <div class="aloil-container">
+                                <img src="@asset('images/partners/aloil.svg')" alt="Алоил" class="aloil-bw">
+                                <img src="@asset('images/partners/4.svg')" alt="Алоил" class="aloil-color">
+                            </div>
                         </div>
                         <div class="partners__list_bottom">
                             <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners__item">

@@ -122,3 +122,43 @@
     }
   }
 }
+
+.aloil-container {
+  position: relative; /* Обертка для позиционирования */
+}
+
+.aloil-color {
+  max-width: 150px;
+  transition: opacity 0.3s ease; /* Плавный переход */
+  opacity: 0;
+
+  @media (max-width: 520px) {
+    max-width: 100px;
+  }
+}
+
+.aloil-bw {
+  max-width: 150px;
+  transition: opacity 0.3s ease; /* Плавный переход */
+  position: absolute;
+
+  @media (max-width: 520px) {
+    max-width: 100px;
+  }
+}
+
+.aloil-container:hover .aloil-bw {
+  opacity: 0;
+
+  @media (max-width: 1024px) {
+    opacity: 1;
+  }
+}
+
+.aloil-container:hover .aloil-color {
+  opacity: 1;
+
+  @media (max-width: 1024px) {
+    opacity: 0;
+  }
+}

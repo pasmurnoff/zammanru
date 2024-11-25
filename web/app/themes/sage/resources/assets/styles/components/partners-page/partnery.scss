@@ -62,3 +62,43 @@
     gap: 48px;
   }
 }
+
+.aloil-container-partners {
+  position: relative; /* Обертка для позиционирования */
+}
+
+.aloil-color-partners {
+  max-width: 100%;
+  transition: opacity 0.3s ease; /* Плавный переход */
+  opacity: 0;
+
+  @media (max-width: 520px) {
+    max-width: 100px;
+  }
+}
+
+.aloil-bw-partners {
+  max-width: 100%;
+  transition: opacity 0.3s ease; /* Плавный переход */
+  position: absolute;
+
+  @media (max-width: 520px) {
+    max-width: 100px;
+  }
+}
+
+.aloil-container-partners:hover .aloil-bw-partners {
+  opacity: 0;
+
+  @media (max-width: 1024px) {
+    opacity: 1;
+  }
+}
+
+.aloil-container-partners:hover .aloil-color-partners {
+  opacity: 1;
+
+  @media (max-width: 1024px) {
+    opacity: 0;
+  }
+}
