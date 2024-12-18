@@ -60,7 +60,7 @@
                     <div class="slide">
                         <div class="service-card" style="height: 135px">
                             <div class="service-card__icon"><img src="<?= App\asset_path('images/services/num7.svg'); ?>"></div>
-                            <p class="service-card__description">Поставка оригинальных запасных частей и расходных
+                            <p class="service-card__description">Поставка оригинальных запасных частей и расходных
                                 материалов
                             </p>
                         </div>

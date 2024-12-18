@@ -4,7 +4,8 @@
             <div class="header__logo">
                 <a href="/">
 
-                    <svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="154" height="21" viewBox="0 0 154 21" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.5714 4.04286L5.91429 16.1H13.7143V20.5H0V16.9571L7.65714 4.9H0.142857V0.5H13.5714V4.04286Z"
                             fill="white" />
@@ -33,7 +34,8 @@
                         <div class="dropdown-content">
                             <div class="dropdown-wrap">
                                 <?php $__currentLoopData = App::productItems(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <a class="dd-element" href="<?php echo e(get_permalink($product->ID)); ?>"><?php echo e($product->post_title); ?></a>
+                                    <a class="dd-element"
+                                        href="<?php echo e(get_permalink($product->ID)); ?>"><?php echo e($product->post_title); ?></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
@@ -47,7 +49,8 @@
                         <div class="dropdown-content">
                             <div class="dropdown-wrap">
                                 <?php $__currentLoopData = App::galleryAlbums(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <a class="dd-element" href="<?php echo e(get_permalink($album->ID)); ?>"><?php echo e($album->post_title); ?></a>
+                                    <a class="dd-element"
+                                        href="<?php echo e(get_permalink($album->ID)); ?>"><?php echo e($album->post_title); ?></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
@@ -112,17 +115,25 @@
             </svg>
 
         </div>
-        <div class="contactus__title">
+        <div class="contactus__title" id="modal-header">
             <h2>Связаться</h2>
         </div>
         <div class="contactus__form">
-            <form class="cform" id="contact-form">
+            <form class="cform" id="form2" data-response-container="responseMessage2">
                 <input type="text" name="name" placeholder="Имя">
-                <input type="text" name="contact " placeholder="Номер или почта">
+                <input type="text" name="contact" placeholder="Номер или почта">
                 <input type="submit" value="Отправить заявку">
             </form>
-            <div id="form-response" style="display:none;"></div>
+            <div id="responseMessage2"></div>
 
         </div>
+    </div>
+</div>
+
+
+<div id="customModal" class="custom-modal">
+    <div class="custom-modal__content">
+        <span class="custom-modal__close">&times;</span>
+        <p id="modalMessage"></p>
     </div>
 </div>

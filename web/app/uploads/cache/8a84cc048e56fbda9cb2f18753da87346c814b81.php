@@ -27,7 +27,7 @@
         </div>
         <div class="service-card">
             <div class="service-card__icon"><img src="<?= App\asset_path('images/services/num7.svg'); ?>"></div>
-            <p class="service-card__description">Поставка оригинальных запасных частей и расходных материалов
+            <p class="service-card__description">Поставка <br>оригинальных запасных частей и расходных материалов
             </p>
         </div>
         <div class="service-card">

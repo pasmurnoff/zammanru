@@ -34,36 +34,84 @@
             <section class="partners">
                 <div class="container">
                     <h2 class="partners__title">Счастливые партнёры</h2>
-                    <div class="partners__list">
-                        <img src="<?= App\asset_path('images/partners/1.svg'); ?>" alt="Ритек" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/2.svg'); ?>" alt="Татнефть" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/3.svg'); ?>" alt="Татнефтеотдача" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/aloil.svg'); ?>" id="aloil-logo" alt="Алоил" class="partners__item_aloil">
-                        <img src="<?= App\asset_path('images/partners/5.svg'); ?>" alt="Самараинвестнефть" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/6.svg'); ?>" alt="Геопрогресс" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/7.svg'); ?>" alt="Байтекс" class="partners__item">
-                        <img src="<?= App\asset_path('images/partners/2.svg'); ?>" alt="ТроицкНефть" class="partners__item">
+                    <div class="partners-logos">
+                        <div class="partners__list">
+                            <img src="<?= App\asset_path('images/partners/1.svg'); ?>" alt="Ритек" class="partners__item">
+                            <img src="<?= App\asset_path('images/partners/2.svg'); ?>" alt="Татнефть" class="partners__item">
+                            <img src="<?= App\asset_path('images/partners/3.svg'); ?>" alt="Татнефтеотдача" class="partners__item">
+                            <div class="aloil-container">
+                                <img src="<?= App\asset_path('images/partners/aloil.svg'); ?>" alt="Алоил" class="aloil-bw">
+                                <img src="<?= App\asset_path('images/partners/4.svg'); ?>" alt="Алоил" class="aloil-color">
+                            </div>
+                        </div>
+                        <div class="partners__list_bottom">
+                            <img src="<?= App\asset_path('images/partners/5.svg'); ?>" alt="Самараинвестнефть" class="partners__item">
+                            <img src="<?= App\asset_path('images/partners/6.svg'); ?>" alt="Геопрогресс" class="partners__item">
+                            <img src="<?= App\asset_path('images/partners/7.svg'); ?>" alt="Байтекс" class="partners__item_last">
+                        </div>
                     </div>
                 </div>
-            </section>
         </div>
-
-        <div class="workflow__action">
-            <a href="/partnery-page" class="btn_primary">Подробнее</a>
-        </div>
-
-    </div>
 </section>
+</div>
 
+<div class="workflow__action">
+    <a href="/partnery-page" class="btn_primary">Подробнее</a>
+</div>
+
+</div>
+</section>
 <script>
-    const svgImage = document.getElementById("aloil-logo");
+    document.addEventListener("DOMContentLoaded", () => {
+        const svgImage = document.getElementById("aloil-logo");
 
-    svgImage.addEventListener("mouseover", () => {
-        svgImage.src = "<?= App\asset_path('images/partners/4.svg'); ?>"; // Замена SVG на hover-версию
-    });
+        // Функция для проверки ширины экрана
+        function isDesktopScreen() {
+            return window.innerWidth > 768; // Если ширина экрана больше 768px
+        }
 
-    svgImage.addEventListener("mouseout", () => {
-        svgImage.src = "<?= App\asset_path('images/partners/aloil.svg'); ?>"; // Возврат к оригинальной версии
+        function addHoverEffect() {
+            svgImage.addEventListener("mouseover", onHover);
+            svgImage.addEventListener("mouseout", onHoverOut);
+        }
+
+        function removeHoverEffect() {
+            svgImage.removeEventListener("mouseover", onHover);
+            svgImage.removeEventListener("mouseout", onHoverOut);
+        }
+
+        function fadeIn(element) {
+            element.style.transition = "opacity 0.3s ease";
+            element.style.opacity = 1; // Плавное проявление
+        }
+
+        function onHover() {
+            svgImage.style.transition = "none"; // Отключаем анимацию перед сменой src
+            svgImage.style.opacity = 0; // Делаем изображение невидимым
+            svgImage.src = "<?= App\asset_path('images/partners/4.svg'); ?>"; // Заменяем изображение
+            setTimeout(() => fadeIn(svgImage), 10); // Плавно проявляем через небольшой интервал
+        }
+
+        function onHoverOut() {
+            svgImage.style.transition = "none"; // Отключаем анимацию перед сменой src
+            svgImage.style.opacity = 0; // Делаем изображение невидимым
+            svgImage.src = "<?= App\asset_path('images/partners/aloil.svg'); ?>"; // Возвращаем изображение
+            setTimeout(() => fadeIn(svgImage), 10); // Плавно проявляем через небольшой интервал
+        }
+
+        // Инициализация: проверка текущей ширины экрана
+        if (isDesktopScreen()) {
+            svgImage.style.opacity = 1; // Устанавливаем начальное состояние
+            addHoverEffect();
+        }
+
+        // Отслеживание изменения ширины экрана
+        window.addEventListener("resize", () => {
+            if (isDesktopScreen()) {
+                addHoverEffect();
+            } else {
+                removeHoverEffect();
+            }
+        });
     });
 </script>
-
