@@ -98,7 +98,7 @@ Container::getInstance()
 require_once dirname(__DIR__ . '/resources') . '/functions/remove.php';
 require_once __DIR__ . '/functions/setup.php';
 require_once __DIR__ . '/functions/ajax.php';
-require_once dirname(__DIR__ . '/resources') . '/functions/send-mail.php';
+// require_once dirname(__DIR__ . '/resources') . '/functions/send-mail.php';
 
 function use_custom_template_for_category_posts($template)
 {
@@ -123,3 +123,7 @@ add_filter('template_include', 'use_custom_template_for_category_posts', 99);
 @ini_set('memory_limit', '256M');
 @ini_set('max_execution_time', '300');
 @ini_set('max_input_time', '300');
+
+add_filter('deprecated_function_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших функциях
+add_filter('deprecated_argument_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших аргументах
+add_filter('deprecated_file_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших файлах

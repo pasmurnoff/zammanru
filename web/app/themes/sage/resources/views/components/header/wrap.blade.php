@@ -55,7 +55,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="header-menu-item"><a href="/kontakty">Контакты</a></li>
+                    <li class="header-menu-item dropdown">
+                        <a href="/galereya">Еще</a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-wrap">
+                                    <a class="dd-element" href="/kontakty">Контакты</a>
+                                    <a class="dd-element" href="/vakansii">Вакансии</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="header__cta">
@@ -93,6 +101,7 @@
                 <li class="mobmenu__element"><a href="/sobytiya" class="a">События</a></li>
                 <li class="mobmenu__element"><a href="/galereya" class="a">Галерея</a></li>
                 <li class="mobmenu__element"><a href="/kontakty" class="a">Контакты</a></li>
+                <li class="mobmenu__element"><a href="/vakansii" class="a">Вакансии</a></li>
             </ul>
         </div>
         <div class="mobmenu__button">

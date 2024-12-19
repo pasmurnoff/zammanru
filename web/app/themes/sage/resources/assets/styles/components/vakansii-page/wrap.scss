@@ -1,0 +1,111 @@
+.vakansii-page {
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 60px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @media screen and (max-width: 768px) {
+      gap: 16px;
+    }
+
+    @media screen and (max-width: 596px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+
+      &__title {
+        margin-bottom: 12px;
+
+        h3 {
+          color: rgba(0, 0, 0, 1);
+          font-size: 20px;
+          line-height: 24px;
+          font-weight: 600;
+          margin: 0;
+          padding: 0;
+          transition: 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            color: rgba(255, 142, 0, 1);
+            transition: 0.3s ease;
+          }
+        }
+      }
+
+      &__info {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 36px;
+
+        span {
+          background: rgba(247, 247, 247, 1);
+          color: rgba(0, 0, 0, 0.6);
+          border-radius: 8px;
+          padding: 4px 12px;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
+
+      &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+
+        @media screen and (max-width: 890px) {
+          flex-direction: column-reverse;
+          align-items: normal;
+          gap: 16px;
+        }
+      }
+
+      &__button {
+        a {
+          display: flex;
+          border-radius: 30px;
+          padding: 16px 28px;
+          background: rgba(255, 142, 0, 0.1);
+          font-size: 16px;
+          font-weight: 500;
+          color: rgba(255, 142, 0, 1);
+          line-height: 25.6px;
+          transition: 0.3s ease;
+
+          @media screen and (max-width: 890px) {
+            place-content: center;
+          }
+
+          &:hover {
+            opacity: 0.8;
+            transition: 0.3s ease;
+          }
+        }
+      }
+
+      &__price {
+        span {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24.2px;
+          color: rgba(0, 0, 0, 1);
+        }
+      }
+    }
+  }
+}

@@ -89,3 +89,12 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+add_filter('single_template', function ($template) {
+    // Проверяем, есть ли запись в рубрике "Вакансия"
+    if (has_term('vakansiya', 'category')) {
+        // Указываем путь к вашему Blade-шаблону
+        return locate_template('views/vakansii-detail.blade.php');
+    }
+    return $template;
+});
