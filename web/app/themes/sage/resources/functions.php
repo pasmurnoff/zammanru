@@ -127,3 +127,16 @@ add_filter('template_include', 'use_custom_template_for_category_posts', 99);
 add_filter('deprecated_function_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших функциях
 add_filter('deprecated_argument_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших аргументах
 add_filter('deprecated_file_trigger_error', '__return_false'); // Скрыть предупреждения об устаревших файлах
+
+function modify_yoast_breadcrumb($links)
+{
+    // Проверяем, что в хлебных крошках больше двух элементов
+    if (count($links) >= 2) {
+        // Убираем ссылку у второго элемента (индекс 1)
+        $links[1]['url'] = '';  // Убираем ссылку
+        $links[1]['class'] = 'current';  // Добавляем класс 'current', чтобы это был просто текст
+    }
+    return $links;
+}
+
+add_filter('wpseo_breadcrumb_links', 'modify_yoast_breadcrumb');
