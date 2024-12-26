@@ -190,3 +190,16 @@
     display: none;
   }
 }
+
+.form-checkbox {
+  text-align: center;
+
+  input {
+    appearance: auto;
+  }
+
+  label {
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+}

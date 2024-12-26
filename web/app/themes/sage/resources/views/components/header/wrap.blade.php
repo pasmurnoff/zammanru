@@ -131,6 +131,12 @@
             <form class="cform" id="form2" data-response-container="responseMessage2">
                 <input type="text" name="name" placeholder="Имя">
                 <input type="text" name="contact" placeholder="Номер или почта">
+                <div class="form-checkbox">
+                    <input type="checkbox" required><label> Даю согласие на обработку
+                        ваших
+                        персональных
+                        данных</label>
+                </div>
                 <input type="submit" value="Отправить заявку">
             </form>
             <div id="responseMessage2"></div>
