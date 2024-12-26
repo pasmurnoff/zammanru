@@ -84,6 +84,7 @@
     }
 
     .events__description h3 {
+      min-height: 39px;
       font-size: 16px;
       color: rgba(0, 0, 0, 1);
       font-weight: 600;
@@ -91,6 +92,10 @@
       letter-spacing: -1%;
       margin-bottom: 12px;
       transition: color 0.3s ease; /* Плавный переход цвета текста */
+
+      @media screen and (max-width: 768px) {
+        min-height: auto;
+      }
     }
 
     .events__image {
