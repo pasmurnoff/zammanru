@@ -43,7 +43,7 @@
                     <li class="header-menu-item"><a href="/uslugi">Услуги</a></li>
                     <li class="header-menu-item"><a href="/o-kompanii">О компании</a></li>
                     <li class="header-menu-item"><a href="/partnery-page">Партнеры</a></li>
-                    <li class="header-menu-item"><a href="/sobytiya">События</a></li>
+                    <li class="header-menu-item"><a href="/kontakty">Контакты</a></li>
                     <li class="header-menu-item dropdown">
                         <a href="/galereya">Галерея</a>
                         <div class="dropdown-content">
@@ -55,7 +55,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="header-menu-item"><a href="/kontakty">Контакты</a></li>
+                    <li class="header-menu-item dropdown">
+                        <a href="/galereya">Еще</a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-wrap">
+                                <a class="dd-element" href="/sobytiya">События</a>
+                                <a class="dd-element" href="/vakansii">Вакансии</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="header__cta">
@@ -90,9 +98,10 @@
                 <li class="mobmenu__element"><a href="/uslugi" class="a">Услуги</a></li>
                 <li class="mobmenu__element"><a href="/o-kompanii" class="a">О компании</a></li>
                 <li class="mobmenu__element"><a href="/partnery-page" class="a">Партнеры</a></li>
-                <li class="mobmenu__element"><a href="/sobytiya" class="a">События</a></li>
-                <li class="mobmenu__element"><a href="/galereya" class="a">Галерея</a></li>
                 <li class="mobmenu__element"><a href="/kontakty" class="a">Контакты</a></li>
+                <li class="mobmenu__element"><a href="/galereya" class="a">Галерея</a></li>
+                <li class="mobmenu__element"><a href="/sobytiya" class="a">События</a></li>
+                <li class="mobmenu__element"><a href="/vakansii" class="a">Вакансии</a></li>
             </ul>
         </div>
         <div class="mobmenu__button">
@@ -122,6 +131,12 @@
             <form class="cform" id="form2" data-response-container="responseMessage2">
                 <input type="text" name="name" placeholder="Имя">
                 <input type="text" name="contact" placeholder="Номер или почта">
+                <div class="form-checkbox">
+                    <input type="checkbox" required><label> Даю согласие на обработку
+                        ваших
+                        персональных
+                        данных</label>
+                </div>
                 <input type="submit" value="Отправить заявку">
             </form>
             <div id="responseMessage2"></div>
