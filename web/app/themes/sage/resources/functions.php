@@ -140,3 +140,140 @@ function modify_yoast_breadcrumb($links)
 }
 
 add_filter('wpseo_breadcrumb_links', 'modify_yoast_breadcrumb');
+
+
+function fetch_vk_posts($owner_id, $count = 10) {
+    $access_token = 'b35f1132b35f1132b35f113217b07805d9bb35fb35f1132d4318e1ea249544519f8d069'; // Замените на ваш токен
+    $api_version = '5.131';
+    $url = "https://api.vk.com/method/wall.get?owner_id={$owner_id}&count={$count}&access_token={$access_token}&v={$api_version}";
+
+    $response = wp_remote_get($url);
+    if (is_wp_error($response)) {
+        return [];
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+
+    if (isset($data['response']['items'])) {
+        return $data['response']['items'];
+    }
+
+    return [];
+}
+
+
+function import_vk_posts_to_events($posts) {
+    foreach ($posts as $post) {
+        $vk_post_id = $post['id'];
+        $existing_post = get_posts([
+            'meta_key' => 'vk_post_id',
+            'meta_value' => $vk_post_id,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'numberposts' => 1,
+        ]);
+
+        if ($existing_post) {
+            continue; // Пропускаем уже импортированные посты
+        }
+
+        $post_content = $post['text'] ?? '';
+        $attachments = isset($post['attachments']) ? $post['attachments'] : [];
+
+        $category = get_category_by_slug('events');
+        if (!$category) {
+            $category_id = wp_insert_category([
+                'cat_name' => 'События',
+                'category_nicename' => 'events',
+                'category_description' => 'Посты из ВКонтакте для раздела "События"',
+            ]);
+        } else {
+            $category_id = $category->term_id;
+        }
+
+        $post_id = wp_insert_post([
+            'post_title' => wp_trim_words($post_content, 10, '...'),
+            'post_content' => $post_content,
+            'post_status' => 'publish',
+            'post_type' => 'post',
+            'post_category' => [$category_id],
+        ]);
+
+        if ($post_id && !is_wp_error($post_id)) {
+            update_post_meta($post_id, 'vk_post_id', $vk_post_id);
+
+            if (!empty($attachments)) {
+                if (!function_exists('media_sideload_image')) {
+                    require_once ABSPATH . 'wp-admin/includes/media.php';
+                    require_once ABSPATH . 'wp-admin/includes/file.php';
+                    require_once ABSPATH . 'wp-admin/includes/image.php';
+                }
+
+                $first_image_set = false; // Флаг для миниатюры
+                $gallery_images = []; // Массив для галереи
+
+                foreach ($attachments as $attachment) {
+                    if ($attachment['type'] === 'photo' && isset($attachment['photo']['sizes'])) {
+                        $sizes = $attachment['photo']['sizes'];
+                        if (is_array($sizes)) {
+                            $image_url = $sizes[count($sizes) - 1]['url'] ?? null;
+
+                            if ($image_url) {
+                                $image_id = media_sideload_image($image_url, $post_id, null, 'id');
+                                if (!is_wp_error($image_id)) {
+                                    // Устанавливаем миниатюру
+                                    if (!$first_image_set) {
+                                        set_post_thumbnail($post_id, $image_id);
+                                        $first_image_set = true;
+                                    }
+
+                                    // Добавляем ID изображения в галерею
+                                    $gallery_images[] = $image_id;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Сохраняем данные в кастомное поле только если есть изображения
+                if (!empty($gallery_images) && is_array($gallery_images)) {
+                    update_post_meta($post_id, 'event-gallery', $gallery_images);
+                } else {
+                    // Если нет изображений, удаляем поле, чтобы избежать ошибок
+                    delete_post_meta($post_id, 'event-gallery');
+                }
+            }
+        }
+    }
+}
+
+
+
+
+function sync_vk_posts_to_events() {
+    $posts = fetch_vk_posts('-202473780', 10); // Укажите ID группы
+
+    if (!empty($posts)) {
+        import_vk_posts_to_events($posts); // Добавляем посты в рубрику "События"
+    }
+}
+add_action('vk_sync_cron', 'sync_vk_posts_to_events');
+
+function setup_vk_sync_cron() {
+    if (!wp_next_scheduled('vk_sync_cron')) {
+        wp_schedule_event(time(), 'hourly', 'vk_sync_cron'); // Запускается каждый час
+    }
+}
+add_action('wp', 'setup_vk_sync_cron');
+
+function remove_vk_sync_cron() {
+    wp_clear_scheduled_hook('vk_sync_cron');
+}
+add_action('switch_theme', 'remove_vk_sync_cron');
+
+if (isset($_GET['run_vk_sync'])) {
+    do_action('vk_sync_cron');
+    echo "Синхронизация завершена!";
+    exit;
+}
