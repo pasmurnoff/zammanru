@@ -1,0 +1,60 @@
+.partners-map {
+  &__wrap {
+    padding-bottom: 100px;
+  }
+
+  &__download {
+    a {
+      color: rgba(255, 142, 0, 1);
+      font-size: 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      transition: 0.3s;
+
+      &:hover {
+        transition: 0.3s;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 36px;
+
+    @media screen and (max-width: 390px) {
+      margin-top: 24px;
+    }
+  }
+
+  &__title {
+    span {
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.6);
+
+      @media screen and (max-width: 390px) {
+        font-size: 13px;
+        line-height: 15.73px;
+      }
+    }
+  }
+
+  &__value {
+    span {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24.2px;
+      color: rgba(0, 0, 0, 1);
+
+      @media screen and (max-width: 390px) {
+        font-size: 18px;
+        line-height: 21.78px;
+      }
+    }
+  }
+}
