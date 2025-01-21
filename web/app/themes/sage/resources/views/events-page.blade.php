@@ -31,18 +31,21 @@ $query = new WP_Query([
                         @while ($query->have_posts())
                             @php $query->the_post() @endphp
                             <div class="events__item">
-                                <a href="{{ get_permalink() }}">
+                                <a href="{{ get_permalink() }}" style="height: 100%; object-fit: cover;">
                                     @if (has_post_thumbnail())
+                           
                                         <img src="{{ get_the_post_thumbnail_url(null, 'full') }}" alt="{{ get_the_title() }}"
                                             class="events__image">
                                     @else
                                         <!-- Если нет миниатюры, можно вставить стандартное изображение -->
                                         <img src="@asset('images/no-photo.png')" alt="Событие по умолчанию" class="events__image">
                                     @endif
+                                  
                                     <div class="events__top">
                                         <span class="events__date">{{ get_the_date('d.m.Y') }}</span>
                                         <div class="events__description">
-                                            <h3>{!! get_the_title() !!}</h3>
+                                            <h3>{!! wp_trim_words(get_the_title(), 7, '...') !!}</h3>
+                                            
                                 </a>
                             </div>
                 </div>
