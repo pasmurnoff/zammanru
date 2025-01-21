@@ -46,9 +46,8 @@ Template Name: Контакты
                         </div>
                     </div>
 
-                    <a href="/app/uploads/2024/11/partnermap.docx" download
-                        class="btn_primary btn_wdth downloadbutton">Карта партнера (1.2
-                        МБ)</a>
+                    <a href="/partner-card"
+                        class="btn_primary btn_wdth downloadbutton">Карта партнера</a>
 
                 </div>
                 <div class="contacts-page__map">
@@ -228,7 +227,7 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="tel:+79061174681"><span>+7 (906) 117-46-81</span></a>
+                                <a href="tel:+79061174681"><span>+7 (939) 310-40-79</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -304,6 +303,40 @@ Template Name: Контакты
                             </div>
                             <div class="contact-info__text">
                                 <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card__top">
+                        <div class="contact-card__image">
+                            <img src="@asset('images/contacts/erofeev.png')">
+                        </div>
+                        <div class="contact-card__info">
+                            <div class="contact-card__name">
+                                <span>Ерофеев Артем Викторович</span>
+                            </div>
+                            <div class="contact-card__position">
+                                <span>Руководитель службы сервиса</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card__contacts">
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="+79274886131"><span>+7 (987) 299-63-37</span></a>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="mailto:omts@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>

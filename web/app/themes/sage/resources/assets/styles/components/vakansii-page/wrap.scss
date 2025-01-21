@@ -76,25 +76,23 @@
       }
 
       &__button {
-        a {
-          display: flex;
-          border-radius: 30px;
-          padding: 16px 28px;
-          background: rgba(255, 142, 0, 0.1);
-          font-size: 16px;
-          font-weight: 500;
-          color: rgba(255, 142, 0, 1);
-          line-height: 25.6px;
+        display: flex;
+        border-radius: 30px;
+        padding: 16px 28px;
+        background: rgba(255, 142, 0, 0.1);
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(255, 142, 0, 1);
+        line-height: 25.6px;
+        transition: 0.3s ease;
+
+        @media screen and (max-width: 890px) {
+          place-content: center;
+        }
+
+        &:hover {
+          opacity: 0.8;
           transition: 0.3s ease;
-
-          @media screen and (max-width: 890px) {
-            place-content: center;
-          }
-
-          &:hover {
-            opacity: 0.8;
-            transition: 0.3s ease;
-          }
         }
       }
 

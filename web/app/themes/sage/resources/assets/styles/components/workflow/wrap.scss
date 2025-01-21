@@ -87,6 +87,7 @@
     }
 
     @media (max-width: 520px) {
+      height: -webkit-fill-available;
       padding: 16px;
     }
 
@@ -96,36 +97,36 @@
       }
     }
 
-    // Псевдоэлемент для стрелки
-    &::after {
-      content: ""; // Содержимое стрелки
-      background-image: url("images/workflow/arrow.svg"); // Путь к SVG
-      background-size: 50%;
-      background-repeat: no-repeat;
-      background-position: center;
-      font-size: 18px;
-      color: #fff;
-      background-color: var(--primary);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      right: -27px;
-      transform: translateY(-50%);
-      z-index: 9;
+    // // Псевдоэлемент для стрелки
+    // &::after {
+    //   content: ""; // Содержимое стрелки
+    //   background-image: url("images/workflow/arrow.svg"); // Путь к SVG
+    //   background-size: 50%;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   font-size: 18px;
+    //   color: #fff;
+    //   background-color: var(--primary);
+    //   width: 40px;
+    //   height: 40px;
+    //   border-radius: 50%;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   position: absolute;
+    //   top: 50%;
+    //   right: -27px;
+    //   transform: translateY(-50%);
+    //   z-index: 9;
 
-      @media (max-width: 1024px) {
-        display: none;
-      }
-    }
+    //   @media (max-width: 1024px) {
+    //     display: none;
+    //   }
+    // }
 
-    &:last-child::after {
-      display: none; // Убираем стрелку у последнего элемента
-    }
+    // &:last-child::after {
+    //   display: none; // Убираем стрелку у последнего элемента
+    // }
   }
 
   &__number {
@@ -136,6 +137,11 @@
     letter-spacing: -1%;
     display: block;
     margin-bottom: auto; /* Отодвигаем номер вверх */
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
 
     @media (max-width: 768px) {
       font-size: 24px;
@@ -154,6 +160,11 @@
 
     @media (max-width: 768px) {
       font-size: 16px;
+      line-height: 19.36px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 14px;
       line-height: 19.36px;
     }
   }

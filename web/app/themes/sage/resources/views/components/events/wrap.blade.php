@@ -46,7 +46,8 @@ $query = new WP_Query([
                                 <div class="events__top">
                                     <span class="events__date">{{ get_the_date('d.m.Y') }}</span>
                                     <div class="events__description">
-                                        <h3>{{ get_the_title() }}</h3>
+                                    <h3>{!! wp_trim_words(get_the_title(), 7, '...') !!}</h3>
+
                             </a>
                         </div>
                     </div>

@@ -44,7 +44,7 @@
                         <a href="#" class="openModal">Связаться</a>
                     </div>
                     <div class="footer-button__secondary">
-                        <a href="/app/uploads/2024/11/partnermap.docx" download class="footer-button__secondary">Карта
+                        <a href="/partner-card" class="footer-button__secondary">Карта
                             партнера</a>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
         <div class="footer__divider"></div>
         <div class="footer__bottom">
             <div class="footer__copyrights">
-                <span>© 2012-2024, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
+                <span>© 2012-2025, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
             </div>
             <div class="footer__links">
                 <a href="/privacy-policy">Политика конфиденциальности</a>
@@ -64,11 +64,15 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        const $carousel = $('.services__carousel');
-        const $prevButton = $('#prev');
-        const $nextButton = $('#next');
+  $(document).ready(function() {
+    const $carousel = $('.services__carousel');
+    const $prevButton = $('#prev');
+    const $nextButton = $('#next');
 
+    // Проверка ширины экрана
+    const isMobile = $(window).width() <= 768;
+
+    if (!isMobile) {
         // Фиксированная ширина одной карточки
         const cardWidth = 400;
 
@@ -115,7 +119,6 @@
         let startX;
         let scrollStart;
 
-        // Начало перетаскивания мышью
         $carousel.on('mousedown', function(e) {
             isDragging = true;
             startX = e.pageX - $carousel.offset().left;
@@ -123,22 +126,20 @@
             $carousel.addClass('grabbing'); // Визуальная индикация
         });
 
-        // Окончание перетаскивания мышью
         $(document).on('mouseup', function() {
             isDragging = false;
             $carousel.removeClass('grabbing');
         });
 
-        // Перетаскивание мышью
         $carousel.on('mousemove', function(e) {
             if (!isDragging) return;
             e.preventDefault();
             const x = e.pageX - $carousel.offset().left;
-            const walk = (x - startX) * 1.5; // Коэффициент скорости перетаскивания
+            const walk = (x - startX) * 1.5;
             $carousel.scrollLeft(scrollStart - walk);
         });
 
-        // Поддержка сенсорных событий для touch-устройств
+        // Сенсорные события
         $carousel.on('touchstart', function(e) {
             isDragging = true;
             startX = e.touches[0].pageX - $carousel.offset().left;
@@ -156,17 +157,30 @@
             $carousel.scrollLeft(scrollStart - walk);
         });
 
-        // Проверяем позицию скролла для зацикливания
+        // Зацикливание
         $carousel.on('scroll', function() {
             const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
 
             if ($carousel.scrollLeft() >= maxScrollLeft - cardWidth) {
-                $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
+                $carousel.scrollLeft(initialScrollLeft);
             } else if ($carousel.scrollLeft() <= 0) {
-                $carousel.scrollLeft(maxScrollLeft - initialScrollLeft); // Возвращаем в конец
+                $carousel.scrollLeft(maxScrollLeft - initialScrollLeft);
             }
         });
-    });
+    } else {
+        // Логика для мобильных устройств (отключаем карусель)
+        $carousel.css({
+            'overflow': 'visible',
+            'display': 'grid',
+            'grid-template-columns': 'repeat(2, 1fr)',
+            'gap': '16px'
+        });
+
+        // Скрываем кнопки управления
+        $('.carousel-controls').hide();
+    }
+});
+
 </script>
 
 <script>

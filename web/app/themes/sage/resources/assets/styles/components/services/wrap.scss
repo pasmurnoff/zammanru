@@ -51,7 +51,7 @@
   overflow-x: auto; /* Убедимся, что карусель прокручивается */
   gap: 20px; /* Отступ между карточками */
   scroll-behavior: smooth; /* Плавная прокрутка */
-  padding: 0 10px; /* Дополнительный внутренний отступ для визуального отступа */
+  padding: 0; /* Дополнительный внутренний отступ для визуального отступа */
   width: 100%; /* Полная ширина карусели */
   -webkit-overflow-scrolling: touch; /* Плавная прокрутка на мобильных устройствах */
   max-width: 1200px;
@@ -62,6 +62,7 @@
   }
 
   @media screen and (max-width: 768px) {
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -72,8 +73,8 @@
   background-color: #fff;
   border-radius: 24px;
   padding: 24px;
-  width: calc((100% / 3) - 65px);
-  height: 260px;
+  width: calc((100% / 3) - 68px);
+  height: auto;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -83,6 +84,15 @@
   @media screen and (max-width: 768px) {
     width: auto;
     height: auto;
+  }
+
+  &__icon {
+    padding-bottom: 24px;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__description {
