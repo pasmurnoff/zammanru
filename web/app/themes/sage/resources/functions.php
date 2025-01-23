@@ -139,7 +139,7 @@ function modify_yoast_breadcrumb($links)
     return $links;
 }
 
-add_filter('wpseo_breadcrumb_links', 'modify_yoast_breadcrumb');
+// add_filter('wpseo_breadcrumb_links', 'modify_yoast_breadcrumb');
 
 
 function fetch_vk_posts($owner_id, $count = 10) {

@@ -64,121 +64,153 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function() {
+$(document).ready(function () {
     const $carousel = $('.services__carousel');
-    const $prevButton = $('#prev');
-    const $nextButton = $('#next');
+    const $pagination = $('.pag');
+    const cardWidth = 400; // ширина одной карточки
+    const $items = $carousel.children(); // все карточки
+    const totalCards = $items.length; // общее количество карточек
+    const scrollTimeout = 200; // Задержка перед выравниванием (мс)
+    let isAnimating = false; // Флаг для предотвращения конфликтов
+    let isDragging = false; // Флаг для drag-and-drop
+    let startX; // Начальная точка перетаскивания
+    let scrollStart; // Начальная позиция скролла
+    let scrollDelta = 0; // Разница прокрутки (нужно для определения направления)
 
-    // Проверка ширины экрана
-    const isMobile = $(window).width() <= 768;
+    // Клонируем карточки для зацикливания
+    $carousel.append($items.clone());
+    $carousel.prepend($items.clone());
 
-    if (!isMobile) {
-        // Фиксированная ширина одной карточки
-        const cardWidth = 400;
+    // Устанавливаем начальную позицию скролла в центр
+    const initialScrollLeft = totalCards * cardWidth;
+    $carousel.scrollLeft(initialScrollLeft);
 
-        // Клонирование элементов для зацикливания
-        const $items = $carousel.children();
-        $carousel.append($items.clone()); // Клонируем элементы в конец
-        $carousel.prepend($items.clone()); // Клонируем элементы в начало
+    // Создаём точки пагинации
+    for (let i = 0; i < totalCards; i++) {
+        const $dot = $('<button class="pagination-dot"></button>');
+        if (i === 0) $dot.addClass('active'); // Первая точка активна по умолчанию
+        $pagination.append($dot);
+    }
 
-        // Устанавливаем начальную позицию скролла (в центр)
-        const initialScrollLeft = $items.length * cardWidth;
-        $carousel.scrollLeft(initialScrollLeft);
+    const $dots = $pagination.find('.pagination-dot');
 
-        // Прокрутка вперед
-        $nextButton.on('click', function() {
-            const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
-            const currentScrollLeft = $carousel.scrollLeft();
-            let newScrollPosition = currentScrollLeft + cardWidth;
+    // Функция обновления активной точки
+    function updateActiveDot() {
+        const currentIndex = Math.round($carousel.scrollLeft() / cardWidth) % totalCards;
+        $dots.removeClass('active');
+        $dots.eq(currentIndex).addClass('active');
+    }
 
-            $carousel.animate({
-                scrollLeft: newScrollPosition
-            }, 300, function() {
-                if (newScrollPosition >= maxScrollLeft) {
-                    $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
-                }
-            });
+    // Прокрутка карусели при клике на точку
+    $dots.on('click', function () {
+        if (isAnimating) return; // Если идёт анимация, выходим
+        isAnimating = true;
+
+        const index = $(this).index();
+        const newScrollLeft = initialScrollLeft + index * cardWidth;
+
+        $carousel.animate({ scrollLeft: newScrollLeft }, 300, function () {
+            isAnimating = false; // Сбрасываем флаг после завершения анимации
         });
+    });
 
-        // Прокрутка назад
-        $prevButton.on('click', function() {
-            const currentScrollLeft = $carousel.scrollLeft();
-            let newScrollPosition = currentScrollLeft - cardWidth;
+    // Автоматическое обновление активной точки и выравнивание
+    let isScrolling;
 
-            $carousel.animate({
-                scrollLeft: newScrollPosition
-            }, 300, function() {
-                if (newScrollPosition <= 0) {
-                    $carousel.scrollLeft(initialScrollLeft); // Возвращаем в начальную позицию
-                }
-            });
+    $carousel.on('scroll', function () {
+        const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
+
+        if ($carousel.scrollLeft() >= maxScrollLeft - cardWidth) {
+            $carousel.scrollLeft(initialScrollLeft);
+        } else if ($carousel.scrollLeft() <= 0) {
+            $carousel.scrollLeft(maxScrollLeft - initialScrollLeft);
+        }
+
+        updateActiveDot();
+
+        // Устанавливаем таймер для выравнивания
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function () {
+            alignToCard();
+        }, scrollTimeout);
+    });
+
+    // Функция выравнивания позиции карусели на ближайшую карточку
+    function alignToCard() {
+        if (isAnimating) return; // Не выравниваем, если идёт анимация
+        const currentScrollLeft = $carousel.scrollLeft();
+        const nearestCardIndex = Math.round(currentScrollLeft / cardWidth);
+        const newScrollLeft = nearestCardIndex * cardWidth;
+
+        isAnimating = true;
+        $carousel.animate({ scrollLeft: newScrollLeft }, 200, function () {
+            isAnimating = false; // Сбрасываем флаг после завершения анимации
         });
+    }
 
-        // Логика для drag & drop
-        let isDragging = false;
-        let startX;
-        let scrollStart;
+    // Логика для drag & drop
+    $carousel.on('mousedown', function (e) {
+        isDragging = true;
+        startX = e.pageX - $carousel.offset().left;
+        scrollStart = $carousel.scrollLeft();
+        $carousel.addClass('grabbing');
+    });
 
-        $carousel.on('mousedown', function(e) {
-            isDragging = true;
-            startX = e.pageX - $carousel.offset().left;
-            scrollStart = $carousel.scrollLeft();
-            $carousel.addClass('grabbing'); // Визуальная индикация
-        });
-
-        $(document).on('mouseup', function() {
+    $(document).on('mouseup', function () {
+        if (isDragging) {
             isDragging = false;
             $carousel.removeClass('grabbing');
-        });
+            if (Math.abs(scrollDelta) > cardWidth / 4) { // Уменьшили порог до четверти ширины карточки
+                // Пролистываем на следующую или предыдущую карточку
+                const direction = scrollDelta > 0 ? 1 : -1;
+                const targetScrollLeft = $carousel.scrollLeft() + direction * cardWidth;
 
-        $carousel.on('mousemove', function(e) {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - $carousel.offset().left;
-            const walk = (x - startX) * 1.5;
-            $carousel.scrollLeft(scrollStart - walk);
-        });
-
-        // Сенсорные события
-        $carousel.on('touchstart', function(e) {
-            isDragging = true;
-            startX = e.touches[0].pageX - $carousel.offset().left;
-            scrollStart = $carousel.scrollLeft();
-        });
-
-        $carousel.on('touchend', function() {
-            isDragging = false;
-        });
-
-        $carousel.on('touchmove', function(e) {
-            if (!isDragging) return;
-            const x = e.touches[0].pageX - $carousel.offset().left;
-            const walk = (x - startX) * 1.5;
-            $carousel.scrollLeft(scrollStart - walk);
-        });
-
-        // Зацикливание
-        $carousel.on('scroll', function() {
-            const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
-
-            if ($carousel.scrollLeft() >= maxScrollLeft - cardWidth) {
-                $carousel.scrollLeft(initialScrollLeft);
-            } else if ($carousel.scrollLeft() <= 0) {
-                $carousel.scrollLeft(maxScrollLeft - initialScrollLeft);
+                $carousel.animate({ scrollLeft: targetScrollLeft }, 200, function () {
+                    alignToCard(); // Выравниваем на ближайшую карточку
+                });
+            } else {
+                alignToCard(); // Если прокрутка недостаточна, просто выравниваем
             }
-        });
-    } else {
-        // Логика для мобильных устройств (отключаем карусель)
-        $carousel.css({
-            'overflow': 'visible',
-            'display': 'grid',
-            'grid-template-columns': 'repeat(2, 1fr)',
-            'gap': '16px'
-        });
+        }
+    });
 
-        // Скрываем кнопки управления
-        $('.carousel-controls').hide();
-    }
+    $carousel.on('mousemove', function (e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - $carousel.offset().left;
+        scrollDelta = x - startX; // Сохраняем разницу для определения направления
+        $carousel.scrollLeft(scrollStart - scrollDelta);
+    });
+
+    // Логика для touch-событий (мобильные устройства)
+    $carousel.on('touchstart', function (e) {
+        isDragging = true;
+        startX = e.touches[0].pageX - $carousel.offset().left;
+        scrollStart = $carousel.scrollLeft();
+    });
+
+    $carousel.on('touchend', function () {
+        if (isDragging) {
+            isDragging = false;
+            if (Math.abs(scrollDelta) > cardWidth / 4) { // Уменьшили порог до четверти ширины карточки
+                const direction = scrollDelta > 0 ? 1 : -1;
+                const targetScrollLeft = $carousel.scrollLeft() + direction * cardWidth;
+
+                $carousel.animate({ scrollLeft: targetScrollLeft }, 200, function () {
+                    alignToCard();
+                });
+            } else {
+                alignToCard();
+            }
+        }
+    });
+
+    $carousel.on('touchmove', function (e) {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - $carousel.offset().left;
+        scrollDelta = x - startX;
+        $carousel.scrollLeft(scrollStart - scrollDelta);
+    });
 });
 
 </script>

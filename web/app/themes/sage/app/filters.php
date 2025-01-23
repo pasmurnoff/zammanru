@@ -98,3 +98,22 @@ add_filter('single_template', function ($template) {
     }
     return $template;
 });
+
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    // Добавляем условие для изменения второй крошки
+    foreach ($links as $key => $link) {
+        if ($key === 1 && $link['text'] === 'Продукция') { // Проверяем название и индекс
+            $links[$key]['url'] = home_url('/produkciya'); // Устанавливаем свою ссылку
+        }
+        if ($key === 1 && $link['text'] === 'Галерея') { // Проверяем название и индекс
+            $links[$key]['url'] = home_url('/galereya'); // Устанавливаем свою ссылку
+        }
+        if ($key === 1 && $link['text'] === 'События') { // Проверяем название и индекс
+            $links[$key]['url'] = home_url('/sobytiya'); // Устанавливаем свою ссылку
+        }
+        if ($key === 1 && $link['text'] === 'Вакансия') { // Проверяем название и индекс
+            $links[$key]['url'] = home_url('/vakansii'); // Устанавливаем свою ссылку
+        }
+    }
+    return $links;
+});

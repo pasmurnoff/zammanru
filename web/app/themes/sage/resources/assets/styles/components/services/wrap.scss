@@ -108,6 +108,10 @@
       line-height: 19.36px;
     }
 
+    @media screen and (max-width: 520px) {
+      margin-top: 0;
+    }
+
     br {
       display: none;
 
@@ -142,4 +146,32 @@
   width: 51px;
   height: 51px;
   margin: 0 10px;
+}
+
+.pag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  .pagination-dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
+    background-color: #0000000f;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .pagination-dot.active {
+    background-color: var(--primary);
+    width: 8px;
+    height: 8px;
+  }
 }
