@@ -77,13 +77,16 @@ $(document).ready(function () {
     let scrollStart; // Начальная позиция скролла
     let scrollDelta = 0; // Разница прокрутки (нужно для определения направления)
 
-    // Клонируем карточки для зацикливания
-    $carousel.append($items.clone());
-    $carousel.prepend($items.clone());
+    // Проверяем размер окна и клонируем карточки только если ширина больше 768px
+    if ($(window).width() > 768) {
+        // Клонируем карточки для зацикливания
+        $carousel.append($items.clone());
+        $carousel.prepend($items.clone());
 
-    // Устанавливаем начальную позицию скролла в центр
-    const initialScrollLeft = totalCards * cardWidth;
-    $carousel.scrollLeft(initialScrollLeft);
+        // Устанавливаем начальную позицию скролла в центр
+        const initialScrollLeft = totalCards * cardWidth;
+        $carousel.scrollLeft(initialScrollLeft);
+    }
 
     // Создаём точки пагинации
     for (let i = 0; i < totalCards; i++) {
@@ -107,7 +110,7 @@ $(document).ready(function () {
         isAnimating = true;
 
         const index = $(this).index();
-        const newScrollLeft = initialScrollLeft + index * cardWidth;
+        const newScrollLeft = totalCards * cardWidth + index * cardWidth;
 
         $carousel.animate({ scrollLeft: newScrollLeft }, 300, function () {
             isAnimating = false; // Сбрасываем флаг после завершения анимации
@@ -121,9 +124,9 @@ $(document).ready(function () {
         const maxScrollLeft = $carousel[0].scrollWidth - $carousel[0].clientWidth;
 
         if ($carousel.scrollLeft() >= maxScrollLeft - cardWidth) {
-            $carousel.scrollLeft(initialScrollLeft);
+            $carousel.scrollLeft(totalCards * cardWidth);
         } else if ($carousel.scrollLeft() <= 0) {
-            $carousel.scrollLeft(maxScrollLeft - initialScrollLeft);
+            $carousel.scrollLeft(maxScrollLeft - totalCards * cardWidth);
         }
 
         updateActiveDot();
