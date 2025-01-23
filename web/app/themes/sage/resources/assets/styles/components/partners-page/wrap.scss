@@ -11,7 +11,7 @@
 
   &_bottom {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 логотипа в ряд */
+    grid-template-columns: repeat(4, 1fr); /* 4 логотипа в ряд */
     gap: 16px;
     justify-items: center;
     align-items: center;
@@ -42,6 +42,11 @@
     transition: filter 0.3s ease; /* Плавный переход */
     opacity: 0.5;
 
+    @media (max-width: 768px) {
+      opacity: 1;
+      filter: none; /* Черно-белый эффект */
+    }
+
     &:hover {
       opacity: 1;
       filter: none; /* Цветное изображение при наведении */
@@ -49,6 +54,11 @@
       @media (max-width: 1024px) {
         opacity: 0.5;
         filter: grayscale(100%); /* Черно-белый эффект */
+      }
+
+      @media (max-width: 768px) {
+        opacity: 1;
+        filter: none; /* Черно-белый эффект */
       }
     }
 

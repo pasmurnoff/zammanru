@@ -86,16 +86,14 @@ Template Name: Партнеры 2
                         <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners-page__item">
                         <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners-page__item">
                         <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners-page__item">
-                        <div class="aloil-container-partners">
-                            <img src="@asset('images/partners/aloil.svg')" alt="Алоил" class="aloil-bw-partners">
-                            <img src="@asset('images/partners/4.svg')" alt="Алоил" class="aloil-color-partners">
-                        </div>
+                        <img src="https://psmrnv.ru/zamman/aloyl.svg") alt="Алоил" class="partners-page__item">
                     </div>
                     <div class="partners-page-list_bottom">
                         <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners-page__item">
                         <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners-page__item">
-                        <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item_last">
-                    </div>
+                        <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item">
+                        <img src="https://psmrnv.ru/zamman/troick.svg" alt="Троицкнефть" class="partners-page__item">                
+</div>
                 </div>
             </div>
         </div>

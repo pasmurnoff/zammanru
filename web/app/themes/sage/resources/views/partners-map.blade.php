@@ -3,6 +3,7 @@ Template Name: Карта партнера
 --}}
 @extends('layouts.app')
 @include('components.header.wrap')
+<meta name="format-detection" content="telephone=no">
 <div class="container">
     <?php
 if (function_exists('yoast_breadcrumb')) {
@@ -19,7 +20,7 @@ if (function_exists('yoast_breadcrumb')) {
 
             <div class="partners-map">
                 <div class="partners-map__download">
-                    <a href="">
+                    <a href="https://zamman.ru/app/uploads/2025/01/partner-card.pdf" download="partner-card.pdf">
                         
 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.9987 1.8335C8.36689 1.8335 8.66536 2.13197 8.66536 2.50016V11.8335C8.66536 12.2017 8.36689 12.5002 7.9987 12.5002C7.63051 12.5002 7.33203 12.2017 7.33203 11.8335V2.50016C7.33203 2.13197 7.63051 1.8335 7.9987 1.8335Z" fill="#FF8E00"/>
