@@ -107,8 +107,8 @@
     </div>
 </section>
 <div class="container">
-    <div class="page__button">
-        <a href="/app/uploads/2024/11/catalog.pdf" download>Смотреть каталог полностью (PDF 1.8 MB)</a>
+    <div style="margin-top:40px;" class="page__button">
+        <a href="" download style="display: none;">Смотреть каталог полностью (PDF 1.8 MB)</a>
     </div>
 </div>
 <div class="page__contactus">

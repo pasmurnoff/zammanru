@@ -14,7 +14,7 @@ $query = new WP_Query([
         <?php while($query->have_posts()): ?>
             <?php $query->the_post() ?>
             <div class="events__item">
-                <a href="<?php echo e(get_permalink()); ?>">
+                <a href="<?php echo e(get_permalink()); ?>"  style="height: 100%; object-fit: cover;">
                     <?php if(has_post_thumbnail()): ?>
                         <img src="<?php echo e(get_the_post_thumbnail_url(null, 'full')); ?>" alt="<?php echo e(get_the_title()); ?>"
                             class="events__image">
@@ -25,7 +25,7 @@ $query = new WP_Query([
                     <div class="events__top">
                         <span class="events__date"><?php echo e(get_the_date('d.m.Y')); ?></span>
                         <div class="events__description">
-                            <h3><?php echo e(get_the_title()); ?></h3>
+                            <h3><?php echo wp_trim_words(get_the_title(), 7, '...'); ?></h3>
                 </a>
             </div>
 </div>

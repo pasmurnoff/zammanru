@@ -5,23 +5,23 @@
             <div class="steps">
                 <div class="steps__list">
                     <div class="steps__item">
-                        <span class="steps__number">01</span>
+                        <span class="steps__number"><img src="<?= App\asset_path('images/services/num1.svg'); ?>"></span>
                         <p class="steps__description">Формирование заявки</p>
                     </div>
                     <div class="steps__item">
-                        <span class="steps__number">02</span>
+                        <span class="steps__number"><img src="<?= App\asset_path('images/services/num2.svg'); ?>"></span>
                         <p class="steps__description">Согласование ТЗ</p>
                     </div>
                     <div class="steps__item">
-                        <span class="steps__number">03</span>
+                        <span class="steps__number"><img src="<?= App\asset_path('images/services/num3.svg'); ?>"></span>
                         <p class="steps__description">Составление договора</p>
                     </div>
                     <div class="steps__item">
-                        <span class="steps__number">04</span>
+                        <span class="steps__number"><img src="<?= App\asset_path('images/services/num4.svg'); ?>"></span>
                         <p class="steps__description">Производство продукции</p>
                     </div>
                     <div class="steps__item">
-                        <span class="steps__number">05</span>
+                        <span class="steps__number"><img src="<?= App\asset_path('images/services/num5.svg'); ?>"></span>
                         <p class="steps__description">Сдача проекта</p>
                     </div>
                 </div>
@@ -39,15 +39,12 @@
                             <img src="<?= App\asset_path('images/partners/1.svg'); ?>" alt="Ритек" class="partners__item">
                             <img src="<?= App\asset_path('images/partners/2.svg'); ?>" alt="Татнефть" class="partners__item">
                             <img src="<?= App\asset_path('images/partners/3.svg'); ?>" alt="Татнефтеотдача" class="partners__item">
-                            <div class="aloil-container">
-                                <img src="<?= App\asset_path('images/partners/aloil.svg'); ?>" alt="Алоил" class="aloil-bw">
-                                <img src="<?= App\asset_path('images/partners/4.svg'); ?>" alt="Алоил" class="aloil-color">
-                            </div>
+                            <img src="https://psmrnv.ru/zamman/aloil.svg" alt="Алоил" class="partners__item">
                         </div>
                         <div class="partners__list_bottom">
-                            <img src="<?= App\asset_path('images/partners/5.svg'); ?>" alt="Самараинвестнефть" class="partners__item">
                             <img src="<?= App\asset_path('images/partners/6.svg'); ?>" alt="Геопрогресс" class="partners__item">
-                            <img src="<?= App\asset_path('images/partners/7.svg'); ?>" alt="Байтекс" class="partners__item_last">
+                            <img src="<?= App\asset_path('images/partners/7.svg'); ?>" alt="Байтекс" class="partners__item">
+                            <img src="<?= App\asset_path('images/partners/troick.svg'); ?>" alt="Троицкнефть" class="partners__item">
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ if (function_exists('yoast_breadcrumb')) {
 
             <div class="partners-map">
                 <div class="partners-map__download">
-                    <a href="https://zamman.ru/app/uploads/2025/01/partner-card.pdf" download="partner-card.pdf">
+                    <a href="https://zamman.ru/app/uploads/2025/03/partner-card-2025.pdf" download="partner-card.pdf">
                         
 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.9987 1.8335C8.36689 1.8335 8.66536 2.13197 8.66536 2.50016V11.8335C8.66536 12.2017 8.36689 12.5002 7.9987 12.5002C7.63051 12.5002 7.33203 12.2017 7.33203 11.8335V2.50016C7.33203 2.13197 7.63051 1.8335 7.9987 1.8335Z" fill="#FF8E00"/>
@@ -35,7 +35,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Полное наименование</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
+                        <span>{{ get_field('full_name') }}</span>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Сокращённое наименование</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>ООО «ЗАМАН»</span>
+                        <span>{{ get_field('short_name') }}</span>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>ИНН</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>1644064679</span>
+                        <span>{{ get_field('inn') }}</span>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>КПП</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>164401001</span>
+                        <span>{{ get_field('kpp') }}</span>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>ОГРН</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>1121644000862 от 04 апреля 2012г.</span>
+                        <span>{{ get_field('ogrn') }}</span>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>ОКПО</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>38735000</span>
+                        <span>{{ get_field('okpo') }}</span>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>ОКВЭД</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>28.13 – Производство прочих насосов и компрессоров</span>
+                        <span>{{ get_field('okved') }}</span>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Юридический адрес </span>
                     </div>
                     <div class="partners-map__value">
-                        <span>423458, Россия, Республика Татарстан, г. Альметьевск, ул. Шевченко, д. 5А, офис 1</span>
+                        <span>{{ get_field('yur_adr') }}</span>
                     </div>
                 </div>
 
@@ -107,25 +107,25 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Почтовый адрес </span>
                     </div>
                     <div class="partners-map__value">
-                        <span>423458, Россия, Республика Татарстан, г. Альметьевск, ул. Шевченко, д. 5А, офис 1</span>
+                        <span>{{ get_field('post_adr') }}</span>
                     </div>
                 </div>
 
-                <div class="partners-map__info">
+                <div style="margin-bottom:36px;" class="partners-map__info">
                     <div class="partners-map__title">
-                        <span>ОКТМО </span>
+                        <span>ОКТМО</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>92608101001</span>
+                        <span>{{ get_field('oktmo') }}</span>
                     </div>
                 </div>
-
+               <hr>
                 <div class="partners-map__info">
                     <div class="partners-map__title">
-                        <span>Расчетный счет </span>
+                        <span>Расчетный счет</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>40702810262000069080</span>
+                        <span>{{ get_field('rashet_chet') }}</span>
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Наименование банка</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>Отделение «Банк Татарстан» №8610 ПАО «Сбербанк»</span>
+                        <span>{{ get_field('bank_name') }}</span>
                     </div>
                 </div>
 
@@ -143,25 +143,67 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Корреспондентский счет</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>30101810600000000603</span>
+                        <span>{{ get_field('kor_chet') }}</span>
                     </div>
                 </div>
 
-                <div class="partners-map__info">
+                <div style="margin-bottom:36px"  class="partners-map__info">
                     <div class="partners-map__title">
                         <span>БИК</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>049205603</span>
+                        <span>{{ get_field('bik') }}</span>
+                    </div>
+                </div>
+
+               <hr>
+
+                <div class="partners-map__info">
+                    <div class="partners-map__title">
+                        <span>Расчетный счет</span>
+                    </div>
+                    <div class="partners-map__value">
+                        <span>{{ get_field('rashet_chet2') }}</span>
                     </div>
                 </div>
 
                 <div class="partners-map__info">
                     <div class="partners-map__title">
+                        <span>Наименование банка</span>
+                    </div>
+                    <div class="partners-map__value">
+                        <span>{{ get_field('bank_name2') }}</span>
+                    </div>
+                </div>
+
+                <div class="partners-map__info">
+                    <div class="partners-map__title">
+                        <span>Корреспондентский счет</span>
+                    </div>
+                    <div class="partners-map__value">
+                        <span>{{ get_field('kor_chet2') }}</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:36px"  class="partners-map__info">
+                    <div class="partners-map__title">
+                        <span>БИК</span>
+                    </div>
+                    <div class="partners-map__value">
+                        <span>{{ get_field('bik2') }}</span>
+                    </div>
+                </div>
+
+               <hr>
+
+
+
+                <div  class="partners-map__info">
+                    <div class="partners-map__title">
                         <span>Контактный телефон</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>+7 (8553) 42-40-79</span>
+                        <span>{{ get_field('contact_phone') }}</span>
                     </div>
                 </div>
 
@@ -170,7 +212,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Адрес электронной почты</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>mail@zamman.com</span>
+                        <span>{{ get_field('email_adr') }}</span>
                     </div>
                 </div>
 
@@ -179,7 +221,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Директор</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>Косуров Михаил Валерьевич</span>
+                        <span>{{ get_field('director') }}</span>
                     </div>
                 </div>
 
@@ -188,7 +230,7 @@ if (function_exists('yoast_breadcrumb')) {
                         <span>Главный бухгалтер</span>
                     </div>
                     <div class="partners-map__value">
-                        <span>Чупахина Наталья Васильевна</span>
+                        <span>{{ get_field('glavbuh') }}</span>
                     </div>
                 </div>
             </div>

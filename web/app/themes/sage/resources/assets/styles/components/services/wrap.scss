@@ -61,7 +61,7 @@
     display: none; /* Для Chrome, Safari и Opera */
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1229px) {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -81,7 +81,7 @@
   justify-content: space-between;
   flex-shrink: 0;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1229px) {
     width: auto;
     height: auto;
   }
@@ -154,7 +154,7 @@
   align-items: center;
   margin-top: 20px;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1229px) {
     display: none;
   }
 

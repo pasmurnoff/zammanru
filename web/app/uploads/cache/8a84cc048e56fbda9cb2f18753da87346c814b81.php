@@ -36,8 +36,6 @@
                 работы НПО</p>
         </div>
     </div>
+    <div class="pag"></div>
 </div>
-<div class="carousel-controls">
-    <button id="prev" class="carousel-button">←</button>
-    <button id="next" class="carousel-button">→</button>
-</div>
+

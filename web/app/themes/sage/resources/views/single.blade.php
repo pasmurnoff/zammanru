@@ -53,6 +53,23 @@
                         $video_thumbnail = get_field('video_thumbnail'); // Превью для видео
                     @endphp
 
+
+                     @php
+
+
+$raw_ids = get_post_meta(get_the_ID(), 'event-gallery', true); // массив ID
+$images = [];
+
+if (is_array($raw_ids)) {
+    foreach ($raw_ids as $image_id) {
+        $images[] = [
+            'url' => wp_get_attachment_image_url($image_id, 'large'),
+            'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true),
+        ];
+    }
+}
+                     @endphp
+
                     @if ($images)
                         <div class="custom-gallery-grid" id="gallery">
                             {{-- Если есть видео, выводим его крупным --}}
@@ -150,7 +167,6 @@
                 <div class="regular-page__content" id="page/content/mobile">
                     <h1 class="regular-page__title" id="page-title-full">{{ the_title() }}</h1>
                     {!! the_content() !!}
-
                     @if ($useful_files)
                         <div class="additionally-files" id="additional-file-mobile">
                             <div class="additionally-files__title">

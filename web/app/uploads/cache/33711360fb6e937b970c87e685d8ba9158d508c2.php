@@ -52,6 +52,23 @@
                         $video_thumbnail = get_field('video_thumbnail'); // Превью для видео
                     ?>
 
+
+                     <?php
+
+
+$raw_ids = get_post_meta(get_the_ID(), 'event-gallery', true); // массив ID
+$images = [];
+
+if (is_array($raw_ids)) {
+    foreach ($raw_ids as $image_id) {
+        $images[] = [
+            'url' => wp_get_attachment_image_url($image_id, 'large'),
+            'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true),
+        ];
+    }
+}
+                     ?>
+
                     <?php if($images): ?>
                         <div class="custom-gallery-grid" id="gallery">
                             
@@ -149,7 +166,6 @@
                 <div class="regular-page__content" id="page/content/mobile">
                     <h1 class="regular-page__title" id="page-title-full"><?php echo e(the_title()); ?></h1>
                     <?php echo the_content(); ?>
-
 
                     <?php if($useful_files): ?>
                         <div class="additionally-files" id="additional-file-mobile">

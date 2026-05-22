@@ -39,10 +39,9 @@
                             <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners__item">
                             <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners__item">
                             <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners__item">
-                            <img src="@asset('images/partners/aloil2.svg')" alt="Алоил" class="partners__item">
+                            <img src="https://psmrnv.ru/zamman/aloil.svg" alt="Алоил" class="partners__item">
                         </div>
                         <div class="partners__list_bottom">
-                            <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners__item">
                             <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners__item">
                             <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners__item">
                             <img src="@asset('images/partners/troick.svg')" alt="Троицкнефть" class="partners__item">

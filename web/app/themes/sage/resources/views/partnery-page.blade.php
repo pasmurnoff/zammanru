@@ -46,13 +46,13 @@ Template Name: Партнеры 2
                         </div>
                     </div>
 
-                    <div class="partners-names__item">
+                  <!--  <div class="partners-names__item">
                         <div class="partners-names__divider"></div>
                         <div class="partners-names__info">
                             <span class="partners-names__title"> АО «Самараинвестнефть» ГК «Нефтиса»
                             </span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="partners-names__item">
                         <div class="partners-names__divider"></div>
@@ -86,10 +86,9 @@ Template Name: Партнеры 2
                         <img src="@asset('images/partners/1.svg')" alt="Ритек" class="partners-page__item">
                         <img src="@asset('images/partners/2.svg')" alt="Татнефть" class="partners-page__item">
                         <img src="@asset('images/partners/3.svg')" alt="Татнефтеотдача" class="partners-page__item">
-                        <img src="https://psmrnv.ru/zamman/aloyl.svg") alt="Алоил" class="partners-page__item">
+                        <img src="https://psmrnv.ru/zamman/aloil.svg") alt="Алоил" class="partners-page__item">
                     </div>
                     <div class="partners-page-list_bottom">
-                        <img src="@asset('images/partners/5.svg')" alt="Самараинвестнефть" class="partners-page__item">
                         <img src="@asset('images/partners/6.svg')" alt="Геопрогресс" class="partners-page__item">
                         <img src="@asset('images/partners/7.svg')" alt="Байтекс" class="partners-page__item">
                         <img src="https://psmrnv.ru/zamman/troick.svg" alt="Троицкнефть" class="partners-page__item">                

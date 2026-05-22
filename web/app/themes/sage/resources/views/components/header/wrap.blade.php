@@ -71,7 +71,7 @@
                     <a href="#" class="btn_primary openModal">Связаться</a>
                 </div>
                 <div class="hamburger">
-                    <a href="#"><svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                    <a href="#" style="width: 25px; height: 25px;"><svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path class="path"
                                 d="M0.5 4.5C0.5 3.94775 0.947754 3.5 1.5 3.5H23.5C24.0522 3.5 24.5 3.94775 24.5 4.5C24.5 5.05225 24.0522 5.5 23.5 5.5H1.5C0.947754 5.5 0.5 5.05225 0.5 4.5Z"

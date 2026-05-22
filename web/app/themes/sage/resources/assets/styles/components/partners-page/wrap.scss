@@ -11,7 +11,7 @@
 
   &_bottom {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 логотипа в ряд */
+    grid-template-columns: repeat(3, 1fr); /* 4 логотипа в ряд */
     gap: 16px;
     justify-items: center;
     align-items: center;

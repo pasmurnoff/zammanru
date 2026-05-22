@@ -53,7 +53,7 @@
         <div class="footer__divider"></div>
         <div class="footer__bottom">
             <div class="footer__copyrights">
-                <span>© 2012-2025, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
+                <span>© 2012-2026, ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАМАН»</span>
             </div>
             <div class="footer__links">
                 <a href="/privacy-policy">Политика конфиденциальности</a>
@@ -78,7 +78,7 @@ $(document).ready(function () {
     let scrollDelta = 0; // Разница прокрутки (нужно для определения направления)
 
     // Проверяем размер окна и клонируем карточки только если ширина больше 768px
-    if ($(window).width() > 768) {
+    if ($(window).width() > 1229) {
         // Клонируем карточки для зацикливания
         $carousel.append($items.clone());
         $carousel.prepend($items.clone());
@@ -300,7 +300,7 @@ $(document).ready(function () {
             const formData = currentForm.serialize();
 
             $.ajax({
-                url: '', // Укажите URL обработчика
+                url: 'https://psmrnv.ru/zam-send.php', // Укажите URL обработчика
                 type: 'POST',
                 dataType: 'json', // Ждём JSON-ответ
                 data: formData,

@@ -110,7 +110,7 @@ Template Name: Контакты
                                     Иванович</span>
                             </div>
                             <div class="contact-card__position">
-                                <span>Первый заместитель директора</span>
+                                <span>Исполнительный директор</span>
                             </div>
                         </div>
                     </div>
@@ -167,40 +167,6 @@ Template Name: Контакты
                             <div class="contact-info__text">
                                 <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card__top">
-                        <div class="contact-card__image">
-                            <img src="@asset('images/contacts/semenyuk.png')">
-
-                        </div>
-                        <div class="contact-card__info">
-                            <div class="contact-card__name">
-                                <span>Семенюк Дмитрий Александрович</span>
-                            </div>
-                            <div class="contact-card__position">
-                                <span>Заместитель директора по маркетингу и продажам</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-card__contacts">
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="tel:+79172415951"><span>+7 (917) 241-59-51</span></a>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -308,17 +274,21 @@ Template Name: Контакты
                     </div>
                 </div>
 
-                <div class="contact-card">
+
+
+
+
+                  <div class="contact-card">
                     <div class="contact-card__top">
                         <div class="contact-card__image">
-                            <img src="@asset('images/contacts/erofeev.png')">
+                            <img src="https://psmrnv.ru/zamman/images/kosurova.png">
                         </div>
                         <div class="contact-card__info">
                             <div class="contact-card__name">
-                                <span>Ерофеев Артем Викторович</span>
+                                <span>Косурова Виктория Михайловна</span>
                             </div>
                             <div class="contact-card__position">
-                                <span>Руководитель службы сервиса</span>
+                                <span>Начальник отдела маркетинга</span>
                             </div>
                         </div>
                     </div>
@@ -328,19 +298,24 @@ Template Name: Контакты
                                 <img src="@asset('images/contacts/phone.svg')"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="+79274886131"><span>+7 (987) 299-63-37</span></a>
+                                <a href="tel:+79518988919"><span>+7 (951) 898-89-19</span></a>
                             </div>
                         </div>
+
                         <div class="contact-info">
                             <div class="contact-info__title">
                                 <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="mailto:omts@zamman.com"><span>mail@zamman.com</span></a>
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>
     </section>
 

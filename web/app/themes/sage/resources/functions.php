@@ -98,7 +98,7 @@ Container::getInstance()
 require_once dirname(__DIR__ . '/resources') . '/functions/remove.php';
 require_once __DIR__ . '/functions/setup.php';
 require_once __DIR__ . '/functions/ajax.php';
-// require_once dirname(__DIR__ . '/resources') . '/functions/send-mail.php';
+require_once dirname(__DIR__ . '/resources') . '/functions/send-mail.php';
 
 function use_custom_template_for_category_posts($template)
 {
@@ -168,7 +168,7 @@ function import_vk_posts_to_events($posts) {
         $vk_post_id = $post['id'];
         $existing_post = get_posts([
             'meta_key' => 'vk_post_id',
-            'meta_value' => $vk_post_id,
+          'meta_value' => $vk_post_id,
             'post_type' => 'post',
             'post_status' => 'publish',
             'numberposts' => 1,
@@ -194,7 +194,7 @@ function import_vk_posts_to_events($posts) {
 
         $post_id = wp_insert_post([
             'post_title' => wp_trim_words($post_content, 10, '...'),
-            'post_content' => $post_content,
+           'post_content' => $post_content,
             'post_status' => 'publish',
             'post_type' => 'post',
             'post_category' => [$category_id],
@@ -207,34 +207,55 @@ function import_vk_posts_to_events($posts) {
                 if (!function_exists('media_sideload_image')) {
                     require_once ABSPATH . 'wp-admin/includes/media.php';
                     require_once ABSPATH . 'wp-admin/includes/file.php';
-                    require_once ABSPATH . 'wp-admin/includes/image.php';
+                   require_once ABSPATH . 'wp-admin/includes/image.php';
                 }
 
                 $first_image_set = false; // Флаг для миниатюры
                 $gallery_images = []; // Массив для галереи
 
                 foreach ($attachments as $attachment) {
-                    if ($attachment['type'] === 'photo' && isset($attachment['photo']['sizes'])) {
-                        $sizes = $attachment['photo']['sizes'];
-                        if (is_array($sizes)) {
-                            $image_url = $sizes[count($sizes) - 1]['url'] ?? null;
+    if ($attachment['type'] === 'photo' && isset($attachment['photo']['sizes'])) {
+        $sizes = $attachment['photo']['sizes'];
+        if (is_array($sizes)) {
+            $image_url = $sizes[count($sizes) - 1]['url'] ?? null;
 
-                            if ($image_url) {
-                                $image_id = media_sideload_image($image_url, $post_id, null, 'id');
-                                if (!is_wp_error($image_id)) {
-                                    // Устанавливаем миниатюру
-                                    if (!$first_image_set) {
-                                        set_post_thumbnail($post_id, $image_id);
-                                        $first_image_set = true;
-                                    }
+            if ($image_url) {
+                $image_html = media_sideload_image($image_url, $post_id, null, 'src');
 
-                                    // Добавляем ID изображения в галерею
-                                    $gallery_images[] = $image_id;
-                                }
-                            }
-                        }
-                    }
-                }
+if (!is_wp_error($image_html)) {
+    // Получаем вложение без привязки по post_parent
+    $attachments = get_posts([
+        'numberposts' => 1,
+        'post_type'   => 'attachment',
+        'orderby'     => 'post_date',
+        'order'       => 'DESC',
+        'post_status' => 'inherit',
+    ]);
+
+    if (!empty($attachments)) {
+        $image_id = $attachments[0]->ID;
+
+        // ⛓ Привязываем вручную
+        wp_update_post([
+            'ID' => $image_id,
+            'post_parent' => $post_id,
+        ]);
+
+        if (!$first_image_set) {
+            set_post_thumbnail($post_id, $image_id);
+            $first_image_set = true;
+        }
+
+        $gallery_images[] = $image_id;
+    }
+}
+}
+}
+
+ }
+}
+
+
 
                 // Сохраняем данные в кастомное поле только если есть изображения
                 if (!empty($gallery_images) && is_array($gallery_images)) {
@@ -277,3 +298,5 @@ if (isset($_GET['run_vk_sync'])) {
     echo "Синхронизация завершена!";
     exit;
 }
+
+

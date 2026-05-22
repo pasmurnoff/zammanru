@@ -42,9 +42,8 @@
                         </div>
                     </div>
 
-                    <a href="/app/uploads/2024/11/partnermap.docx" download
-                        class="btn_primary btn_wdth downloadbutton">Карта партнера (1.2
-                        МБ)</a>
+                    <a href="/partner-card"
+                        class="btn_primary btn_wdth downloadbutton">Карта партнера</a>
 
                 </div>
                 <div class="contacts-page__map">
@@ -107,7 +106,7 @@
                                     Иванович</span>
                             </div>
                             <div class="contact-card__position">
-                                <span>Первый заместитель директора</span>
+                                <span>Исполнительный директор</span>
                             </div>
                         </div>
                     </div>
@@ -171,40 +170,6 @@
                 <div class="contact-card">
                     <div class="contact-card__top">
                         <div class="contact-card__image">
-                            <img src="<?= App\asset_path('images/contacts/semenyuk.png'); ?>">
-
-                        </div>
-                        <div class="contact-card__info">
-                            <div class="contact-card__name">
-                                <span>Семенюк Дмитрий Александрович</span>
-                            </div>
-                            <div class="contact-card__position">
-                                <span>Заместитель директора по маркетингу и продажам</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-card__contacts">
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="<?= App\asset_path('images/contacts/phone.svg'); ?>"><span>Телефон</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="tel:+79172415951"><span>+7 (917) 241-59-51</span></a>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="<?= App\asset_path('images/contacts/mail.svg'); ?>"><span>Почта</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card__top">
-                        <div class="contact-card__image">
                             <img src="<?= App\asset_path('images/contacts/chupahina.png'); ?>">
 
                         </div>
@@ -224,7 +189,7 @@
                                 <img src="<?= App\asset_path('images/contacts/phone.svg'); ?>"><span>Телефон</span>
                             </div>
                             <div class="contact-info__text">
-                                <a href="tel:+79061174681"><span>+7 (906) 117-46-81</span></a>
+                                <a href="tel:+79061174681"><span>+7 (939) 310-40-79</span></a>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -304,6 +269,49 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+                  <div class="contact-card">
+                    <div class="contact-card__top">
+                        <div class="contact-card__image">
+                            <img src="https://psmrnv.ru/zamman/images/kosurova.png">
+                        </div>
+                        <div class="contact-card__info">
+                            <div class="contact-card__name">
+                                <span>Косурова Виктория Михайловна</span>
+                            </div>
+                            <div class="contact-card__position">
+                                <span>Начальник отдела маркетинга</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card__contacts">
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="<?= App\asset_path('images/contacts/phone.svg'); ?>"><span>Телефон</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="tel:+79518988919"><span>+7 (951) 898-89-19</span></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-info__title">
+                                <img src="<?= App\asset_path('images/contacts/mail.svg'); ?>"><span>Почта</span>
+                            </div>
+                            <div class="contact-info__text">
+                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
     </section>
 
