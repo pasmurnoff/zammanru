@@ -30,37 +30,48 @@
             <div class="footer__contacts">
                 <div class="footer-contacts">
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/place.svg')"><i>АДРЕС:</i><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+                        <img src="@asset('images/footer/place.svg')"><i>АДРЕС:</i>
+                        <div class="footer-contacts__body">
+                            <span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+                        </div>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/phone.svg')"><i>ОФИС:</i><a href="tel:+7853424079"><span>+7 (8553) 42-40-79,</span></a> <a
-                            href="tel:+79393104079"><span>+7 (939)
-                                310-40-79</span></a>
-                        <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
-                            data-phone-display="+7 (939) 310-40-79"
-                            data-phone-tel="+79393104079"
-                            data-telegram="https://t.me/zamman_company"
-                            data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
-                            data-whatsapp="https://wa.me/79393104079"
-                            aria-label="Способы связи с офисом">
-                            <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
-                        </button>
+                        <img src="@asset('images/footer/phone.svg')"><i>ОФИС:</i>
+                        <div class="footer-contacts__body">
+                            <a href="tel:+7853424079"><span>+7 (8553) 42-40-79,</span></a>
+                            <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span></a>
+                            <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
+                                data-phone-display="+7 (939) 310-40-79"
+                                data-phone-tel="+79393104079"
+                                data-telegram="https://t.me/zamman_company"
+                                data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                data-whatsapp="https://wa.me/79393104079"
+                                aria-label="Способы связи с офисом">
+                                <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
+                            </button>
+                        </div>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/phone.svg')"><i>СЛУЖБА СЕРВИСА:</i><a href="tel:+79869325052"><span>+7 (986) 932-50-52</span></a>
-                        <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
-                            data-phone-display="+7 (986) 932-50-52"
-                            data-phone-tel="+79869325052"
-                            data-telegram="https://t.me/zamman_company"
-                            data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
-                            data-whatsapp="https://wa.me/79869325052"
-                            aria-label="Способы связи со службой сервиса">
-                            <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
-                        </button>
+                        <img src="@asset('images/footer/phone.svg')"><i>СЛУЖБА СЕРВИСА:</i>
+                        <div class="footer-contacts__body">
+                            <a href="tel:+79869325052"><span>+7 (986) 932-50-52</span></a>
+                            <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
+                                data-phone-display="+7 (986) 932-50-52"
+                                data-phone-tel="+79869325052"
+                                data-telegram="https://t.me/zamman_company"
+                                data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                data-whatsapp="https://wa.me/79869325052"
+                                aria-label="Способы связи со службой сервиса">
+                                <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
+                            </button>
+                        </div>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/mail.svg')"><i>ПОЧТА:</i><a href="mailto:mail@zamman.com"><span>mail@zamman.com,</span></a>
-                        <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
+                        <img src="@asset('images/footer/mail.svg')"><i>ПОЧТА:</i>
+                        <div class="footer-contacts__body">
+                            <a href="mailto:mail@zamman.com"><span>mail@zamman.com,</span></a>
+                            <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
+                        </div>
                     </div>
                 </div>
 
@@ -103,17 +114,17 @@
         <div class="phone-messenger-modal__links">
             <a href="#" id="phoneMessengerModalTelegram" class="phone-messenger-modal__link" target="_blank"
                 rel="noopener noreferrer">
-                <img src="@asset('images/socials/telegram-footer.svg')" width="24" height="24" alt="">
+                <img src="@asset('images/socials/telegram-footer.svg')" width="72" height="72" alt="">
                 <span class="phone-messenger-modal__link-label">Telegram</span>
             </a>
             <a href="#" id="phoneMessengerModalMax" class="phone-messenger-modal__link" target="_blank"
                 rel="noopener noreferrer">
-                <img src="@asset('images/socials/max-footer.svg')" width="24" height="24" alt="">
+                <img src="@asset('images/socials/max-footer.svg')" width="72" height="72" alt="">
                 <span class="phone-messenger-modal__link-label">Max</span>
             </a>
             <a href="#" id="phoneMessengerModalWhatsapp" class="phone-messenger-modal__link" target="_blank"
                 rel="noopener noreferrer">
-                <img src="@asset('images/socials/whatsapp-footer.svg')" width="24" height="24" alt="">
+                <img src="@asset('images/socials/whatsapp-footer.svg')" width="72" height="72" alt="">
                 <span class="phone-messenger-modal__link-label">WhatsApp</span>
             </a>
         </div>
@@ -337,9 +348,11 @@ $(document).ready(function () {
             });
         });
 
-        closeButton.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+        }
 
         // Закрытие модального окна при клике на затемнённую область
         window.addEventListener('click', function(event) {

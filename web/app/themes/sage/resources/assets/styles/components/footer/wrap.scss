@@ -29,6 +29,15 @@
     }
   }
 
+  &__contacts {
+    min-width: 0;
+    max-width: 100%;
+
+    @media (max-width: 520px) {
+      width: 100%;
+    }
+  }
+
   &__logo {
     margin-bottom: 46px;
 
@@ -159,126 +168,110 @@
       }
     }
   }
-}
 
-.footer-contacts {
-  display: inline-flex;
-  gap: 20px;
-  flex-direction: column;
-
-  &__element {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-
-    img {
-      @media (max-width: 520px) {
-        width: 16px;
-      }
-    }
-
-    i {
-      color: var(--primary);
-      font-size: 16px;
-      line-height: 19.36px;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    span {
-      color: #fff;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19.36px;
-
-      &:hover {
-        color: var(--primary);
-      }
-
-      @media (max-width: 768px) {
-        font-size: 14px; /* 1 карточка в ряд на мобильных */
-        line-height: 16.94px;
-      }
-    }
-  }
-
-  &__chevron-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-left: 4px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    line-height: 0;
-
-    img {
-      width: 18px;
-      height: 18px;
-    }
-  }
-}
-
-.phone-messenger-modal {
-  &__title {
-    margin-bottom: 24px;
-
-    h2 {
-      font-size: 24px;
-      line-height: 29.05px;
-      font-weight: 600;
-      letter-spacing: -1%;
-      color: #000;
-    }
-  }
-
-  &__links {
+  .footer-contacts {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
 
-  &__link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    border-radius: 16px;
-    background: #f7f7f7;
-    text-decoration: none;
-    transition: background 0.2s ease;
-
-    img {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
+    @media (max-width: 520px) {
+      gap: 16px;
     }
 
-    &-label {
-      font-size: 16px;
-      line-height: 19.36px;
-      font-weight: 500;
-      color: #000;
-    }
+    &__element {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      max-width: 100%;
 
-    &:hover {
-      background: #ff8e001a;
+      @media (max-width: 520px) {
+        flex-wrap: wrap;
+      }
 
-      .phone-messenger-modal__link-label {
+      > img {
+        flex-shrink: 0;
+        margin-top: 2px;
+
+        @media (max-width: 520px) {
+          width: 16px;
+        }
+      }
+
+      > i {
+        flex-shrink: 0;
         color: var(--primary);
+        font-size: 16px;
+        line-height: 19.36px;
+        font-weight: 400;
+        font-style: normal;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+          line-height: 16.94px;
+        }
+
+        @media (max-width: 400px) {
+          white-space: normal;
+          max-width: calc(100% - 24px);
+        }
       }
     }
-  }
 
-  &__call {
-    display: block;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    box-sizing: border-box;
+    &__body {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 8px;
+      flex: 1 1 0;
+      min-width: 0;
+
+      @media (max-width: 520px) {
+        flex: 1 1 100%;
+        padding-left: 24px;
+      }
+
+      > span,
+      a span {
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        word-break: break-word;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+          line-height: 16.94px;
+        }
+      }
+
+      > a {
+        text-decoration: none;
+
+        &:hover span {
+          color: var(--primary);
+        }
+      }
+    }
+
+    &__chevron-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: 4px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      line-height: 0;
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 }
 

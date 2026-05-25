@@ -26,38 +26,23 @@ Template Name: Контакты
                         </div>
                     </div>
 
-                    <div class="contacts-page__row">
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/phone.svg')"><span>Офис</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="tel:+78553424079"><span>+7 (8553) 42-40-79</span></a>
-                                <div class="contact-info__text-row">
-                                    <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span></a>
-                                    <div class="contact-info__messengers">
-                                        <a href="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
-                                            class="contact-info__messenger" target="_blank" rel="noopener noreferrer"
-                                            aria-label="Max">
-                                            <img src="@asset('images/socials/max-footer.svg')" width="24" height="24" alt="">
-                                        </a>
-                                        <a href="https://t.me/zamman_company"
-                                            class="contact-info__messenger" target="_blank" rel="noopener noreferrer"
-                                            aria-label="Telegram">
-                                            <img src="@asset('images/socials/telegram-footer.svg')" width="24" height="24" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="contact-info">
+                        <div class="contact-info__title">
+                            <img src="@asset('images/contacts/phone.svg')"><span>Офис</span>
                         </div>
-
-                        <div class="contact-info">
-                            <div class="contact-info__title">
-                                <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
-                            </div>
-                            <div class="contact-info__text">
-                                <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
-                                <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
+                        <div class="contact-info__text">
+                            <a href="tel:+78553424079"><span>+7 (8553) 42-40-79</span></a>
+                            <div class="contact-info__text-row">
+                                <a href="tel:+79393104079"><span>+7 (939) 310-40-79</span></a>
+                                <button type="button" class="contact-info__chevron-btn js-phone-messenger-open"
+                                    data-phone-display="+7 (939) 310-40-79"
+                                    data-phone-tel="+79393104079"
+                                    data-telegram="https://t.me/zamman_company"
+                                    data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                    data-whatsapp="https://wa.me/79393104079"
+                                    aria-label="Способы связи с офисом">
+                                    <img src="@asset('images/contacts/chevron-down.svg')" width="18" height="18" alt="">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -69,19 +54,26 @@ Template Name: Контакты
                         <div class="contact-info__text">
                             <div class="contact-info__text-row">
                                 <a href="tel:+79869325052"><span>+7 (986) 932-50-52</span></a>
-                                <div class="contact-info__messengers">
-                                    <a href="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
-                                        class="contact-info__messenger" target="_blank" rel="noopener noreferrer"
-                                        aria-label="Max">
-                                        <img src="@asset('images/socials/max-footer.svg')" width="24" height="24" alt="">
-                                    </a>
-                                    <a href="https://t.me/zamman_company"
-                                        class="contact-info__messenger" target="_blank" rel="noopener noreferrer"
-                                        aria-label="Telegram">
-                                        <img src="@asset('images/socials/telegram-footer.svg')" width="24" height="24" alt="">
-                                    </a>
-                                </div>
+                                <button type="button" class="contact-info__chevron-btn js-phone-messenger-open"
+                                    data-phone-display="+7 (986) 932-50-52"
+                                    data-phone-tel="+79869325052"
+                                    data-telegram="https://t.me/zamman_company"
+                                    data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                    data-whatsapp="https://wa.me/79869325052"
+                                    aria-label="Способы связи со службой сервиса">
+                                    <img src="@asset('images/contacts/chevron-down.svg')" width="18" height="18" alt="">
+                                </button>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-info__title">
+                            <img src="@asset('images/contacts/mail.svg')"><span>Почта</span>
+                        </div>
+                        <div class="contact-info__text">
+                            <a href="mailto:mail@zamman.com"><span>mail@zamman.com</span></a>
+                            <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
                         </div>
                     </div>
 
