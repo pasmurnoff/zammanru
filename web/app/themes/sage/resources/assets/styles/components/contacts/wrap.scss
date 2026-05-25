@@ -24,6 +24,17 @@
     }
   }
 
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -87,6 +98,25 @@
         font-weight: 500;
       }
     }
+  }
+
+  &__text-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__messengers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__messenger {
+    display: flex;
+    flex-shrink: 0;
+    line-height: 0;
   }
 
   &__text {
@@ -207,4 +237,18 @@
 
 .contact-info__text span:hover {
   color: var(--primary);
+}
+
+.contact-info__messenger img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  filter: grayscale(1);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.contact-info__messenger:hover img,
+.contact-info__messenger:focus img {
+  opacity: 1;
+  filter: grayscale(0);
 }

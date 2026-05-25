@@ -169,11 +169,20 @@
   &__element {
     display: flex;
     gap: 8px;
+    align-items: center;
 
     img {
       @media (max-width: 520px) {
         width: 16px;
       }
+    }
+
+    i {
+      color: var(--primary);
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 400;
+      font-style: normal;
     }
 
     span {
@@ -191,6 +200,85 @@
         line-height: 16.94px;
       }
     }
+  }
+
+  &__chevron-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 4px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.phone-messenger-modal {
+  &__title {
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 24px;
+      line-height: 29.05px;
+      font-weight: 600;
+      letter-spacing: -1%;
+      color: #000;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: #f7f7f7;
+    text-decoration: none;
+    transition: background 0.2s ease;
+
+    img {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    &-label {
+      font-size: 16px;
+      line-height: 19.36px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    &:hover {
+      background: #ff8e001a;
+
+      .phone-messenger-modal__link-label {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__call {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
   }
 }
 

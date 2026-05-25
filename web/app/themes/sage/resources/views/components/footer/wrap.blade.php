@@ -7,11 +7,15 @@
                 </div>
                 <div class="footer__socials">
                     <div class="fsocials">
-                        <a href="https://t.me/zamman_company">
-                            <img src="@asset('images/socials/telegram-footer.svg')">
+
+                         <a href="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs">
+                            <img src="@asset('images/socials/max-footer.svg')">
                         </a>
                         <a href="https://vk.com/zamman_company">
                             <img src="@asset('images/socials/vk-footer.svg')">
+                        </a>
+                        <a href="https://t.me/zamman_company">
+                            <img src="@asset('images/socials/telegram-footer.svg')">
                         </a>
                     </div>
                 </div>
@@ -26,15 +30,36 @@
             <div class="footer__contacts">
                 <div class="footer-contacts">
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/place.svg')"><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
+                        <img src="@asset('images/footer/place.svg')"><i>АДРЕС:</i><span>423458, РТ, г. Альметьевск, ул. Шевченко, д. 5А/1</span>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/phone.svg')"><a href="tel:+7853424079"><span>+7 (8553) 42-40-79,</span></a> <a
+                        <img src="@asset('images/footer/phone.svg')"><i>ОФИС:</i><a href="tel:+7853424079"><span>+7 (8553) 42-40-79,</span></a> <a
                             href="tel:+79393104079"><span>+7 (939)
                                 310-40-79</span></a>
+                        <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
+                            data-phone-display="+7 (939) 310-40-79"
+                            data-phone-tel="+79393104079"
+                            data-telegram="https://t.me/zamman_company"
+                            data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                            data-whatsapp="https://wa.me/79393104079"
+                            aria-label="Способы связи с офисом">
+                            <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
+                        </button>
                     </div>
                     <div class="footer-contacts__element">
-                        <img src="@asset('images/footer/mail.svg')"><a href="mailto:mail@zamman.com"><span>mail@zamman.com,</span></a>
+                        <img src="@asset('images/footer/phone.svg')"><i>СЛУЖБА СЕРВИСА:</i><a href="tel:+79869325052"><span>+7 (986) 932-50-52</span></a>
+                        <button type="button" class="footer-contacts__chevron-btn js-phone-messenger-open"
+                            data-phone-display="+7 (986) 932-50-52"
+                            data-phone-tel="+79869325052"
+                            data-telegram="https://t.me/zamman_company"
+                            data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                            data-whatsapp="https://wa.me/79869325052"
+                            aria-label="Способы связи со службой сервиса">
+                            <img src="@asset('images/footer/chevron-down.svg')" width="18" height="18" alt="">
+                        </button>
+                    </div>
+                    <div class="footer-contacts__element">
+                        <img src="@asset('images/footer/mail.svg')"><i>ПОЧТА:</i><a href="mailto:mail@zamman.com"><span>mail@zamman.com,</span></a>
                         <a href="mailto:omts@zamman.com"><span>omts@zamman.com</span></a>
                     </div>
                 </div>
@@ -61,6 +86,40 @@
         </div>
     </div>
 </footer>
+
+<div class="modal" id="phoneMessengerModal">
+    <div class="modal-content phone-messenger-modal">
+        <div class="phone-messenger-modal__close close-button" role="button" tabindex="0" aria-label="Закрыть">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6.5L6 18.5" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M6 6.5L18 18.5" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="contactus__title phone-messenger-modal__title">
+            <h2 id="phoneMessengerModalTitle"></h2>
+        </div>
+        <div class="phone-messenger-modal__links">
+            <a href="#" id="phoneMessengerModalTelegram" class="phone-messenger-modal__link" target="_blank"
+                rel="noopener noreferrer">
+                <img src="@asset('images/socials/telegram-footer.svg')" width="24" height="24" alt="">
+                <span class="phone-messenger-modal__link-label">Telegram</span>
+            </a>
+            <a href="#" id="phoneMessengerModalMax" class="phone-messenger-modal__link" target="_blank"
+                rel="noopener noreferrer">
+                <img src="@asset('images/socials/max-footer.svg')" width="24" height="24" alt="">
+                <span class="phone-messenger-modal__link-label">Max</span>
+            </a>
+            <a href="#" id="phoneMessengerModalWhatsapp" class="phone-messenger-modal__link" target="_blank"
+                rel="noopener noreferrer">
+                <img src="@asset('images/socials/whatsapp-footer.svg')" width="24" height="24" alt="">
+                <span class="phone-messenger-modal__link-label">WhatsApp</span>
+            </a>
+        </div>
+        <a href="#" id="phoneMessengerModalCall" class="btn_primary phone-messenger-modal__call">Позвонить по телефону</a>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -220,9 +279,55 @@ $(document).ready(function () {
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const phoneMessengerModal = document.getElementById('phoneMessengerModal');
+        const phoneMessengerTitle = document.getElementById('phoneMessengerModalTitle');
+        const phoneMessengerTelegram = document.getElementById('phoneMessengerModalTelegram');
+        const phoneMessengerMax = document.getElementById('phoneMessengerModalMax');
+        const phoneMessengerWhatsapp = document.getElementById('phoneMessengerModalWhatsapp');
+        const phoneMessengerCall = document.getElementById('phoneMessengerModalCall');
+        const phoneMessengerOpenButtons = document.querySelectorAll('.js-phone-messenger-open');
+        const phoneMessengerClose = phoneMessengerModal
+            ? phoneMessengerModal.querySelector('.phone-messenger-modal__close')
+            : null;
+
+        function openPhoneMessengerModal(button) {
+            phoneMessengerTitle.textContent = button.dataset.phoneDisplay;
+            phoneMessengerTelegram.href = button.dataset.telegram;
+            phoneMessengerMax.href = button.dataset.max;
+            phoneMessengerWhatsapp.href = button.dataset.whatsapp;
+            phoneMessengerCall.href = 'tel:' + button.dataset.phoneTel;
+            phoneMessengerModal.style.display = 'flex';
+        }
+
+        function closePhoneMessengerModal() {
+            phoneMessengerModal.style.display = 'none';
+        }
+
+        phoneMessengerOpenButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                openPhoneMessengerModal(button);
+            });
+        });
+
+        if (phoneMessengerClose) {
+            phoneMessengerClose.addEventListener('click', closePhoneMessengerModal);
+        }
+
+        if (phoneMessengerModal) {
+            phoneMessengerModal.addEventListener('click', function(event) {
+                if (event.target === phoneMessengerModal) {
+                    closePhoneMessengerModal();
+                }
+            });
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('contactModal');
         const openButtons = document.querySelectorAll('.openModal'); // Все кнопки с классом openModal
-        const closeButton = document.querySelector('.close-button');
+        const closeButton = modal ? modal.querySelector('.close-button') : null;
 
         // Добавляем обработчик для каждой кнопки
         openButtons.forEach(button => {
