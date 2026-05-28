@@ -37,8 +37,8 @@ Template Name: Контакты
                                 <button type="button" class="contact-info__chevron-btn js-phone-messenger-open"
                                     data-phone-display="+7 (939) 310-40-79"
                                     data-phone-tel="+79393104079"
-                                    data-telegram="https://t.me/zamman_company"
-                                    data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                    data-telegram="https://t.me/zamman_office"
+                                    data-max="https://max.ru/u/f9LHodD0cOIbOt6HGobyr4h1gZAM6WXUeJ1OekubQBPpkKgWEalbmbVO6y0"
                                     data-whatsapp="https://wa.me/79393104079"
                                     aria-label="Способы связи с офисом">
                                     <img src="@asset('images/contacts/chevron-down.svg')" width="18" height="18" alt="">
@@ -57,8 +57,8 @@ Template Name: Контакты
                                 <button type="button" class="contact-info__chevron-btn js-phone-messenger-open"
                                     data-phone-display="+7 (986) 932-50-52"
                                     data-phone-tel="+79869325052"
-                                    data-telegram="https://t.me/zamman_company"
-                                    data-max="https://max.ru/join/g9ByGaS0OybTwiezP32iaHznRDvvzrulCP3t4BGPyKs"
+                                    data-telegram="https://t.me/zamman_service"
+                                    data-max="https://max.ru/u/f9LHodD0cOIgWK3Gow5xkTqqLHKg_Eu6oYkBRbA8YnUjIp92fgEbPX6ouwE"
                                     data-whatsapp="https://wa.me/79869325052"
                                     aria-label="Способы связи со службой сервиса">
                                     <img src="@asset('images/contacts/chevron-down.svg')" width="18" height="18" alt="">
